@@ -55,6 +55,12 @@ import Process from './pages/Process';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Resources from './pages/Resources';
+import CaseStudies from './pages/CaseStudies';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import ThankYouWholesale from './pages/ThankYouWholesale';
+import ThankYouB2C from './pages/ThankYouB2C';
+import LeadsDashboard from './pages/LeadsDashboard';
 import __Layout from './Layout.jsx';
 
 
@@ -67,6 +73,12 @@ export const PAGES = {
     "About": About,
     "Contact": Contact,
     "Resources": Resources,
+    "CaseStudies": CaseStudies,
+    "Privacy": Privacy,
+    "Terms": Terms,
+    "ThankYouWholesale": ThankYouWholesale,
+    "ThankYouB2C": ThankYouB2C,
+    "LeadsDashboard": LeadsDashboard,
 }
 
 export const pagesConfig = {
