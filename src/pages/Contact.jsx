@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Loader2, CheckCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { createPageUrl } from '../utils';
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,8 @@ export default function Contact() {
     phone: '',
     business: '',
     goal: '',
-    notes: ''
+    notes: '',
+    honeypot: ''
   });
 
   const handleChange = (field, value) => {
@@ -25,10 +27,43 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot spam protection
+    if (formData.honeypot) {
+      return;
+    }
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.goal) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
     setLoading(true);
     
     try {
-      await base44.entities.BookingRequest.create(formData);
+      const { honeypot, ...cleanData } = formData;
+      await base44.entities.BookingRequest.create(cleanData);
+      
+      // Send notification email
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Lifted Trend Media - Contact Form',
+        to: 'ahron@mydragonplug.com',
+        subject: `New Contact Form: ${cleanData.goal} - ${cleanData.name}`,
+        body: `
+New contact form submission:
+
+Name: ${cleanData.name}
+Email: ${cleanData.email}
+Phone: ${cleanData.phone || 'Not provided'}
+Business: ${cleanData.business || 'Not provided'}
+Goal: ${cleanData.goal}
+
+Notes:
+${cleanData.notes || 'None'}
+        `
+      });
+      
       base44.analytics.track({ eventName: 'booking_request_submit', properties: { success: true } });
       setSubmitted(true);
     } catch (error) {
@@ -47,11 +82,18 @@ export default function Contact() {
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Request Received</h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thanks for reaching out. We'll review your request and get back to you within 24 hours with next steps.
+            Thanks for reaching out. We'll review your request and get back to you within 1 business day.
           </p>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mb-8">
             Check your email for a confirmation. If you don't see it, check your spam folder.
           </p>
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+            <p className="text-gray-900 font-semibold mb-3">Want to skip the wait?</p>
+            <p className="text-gray-700 mb-4">Book a 15-minute Farm Growth Audit and get started right away.</p>
+            <a href={createPageUrl('FarmGrowthAudit')} className="inline-flex items-center gap-2 text-green-800 hover:text-green-900 font-semibold">
+              Book Your Audit Now →
+            </a>
+          </div>
         </div>
       </div>
     );
@@ -73,28 +115,62 @@ export default function Contact() {
 
       {/* Contact Info */}
       <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <Mail className="w-6 h-6 text-green-800" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-xl border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get In Touch</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
+                    <Mail className="w-5 h-5 text-green-800" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                  <a href="mailto:ahron@mydragonplug.com" className="text-green-800 hover:text-green-900 font-medium">
+                    ahron@mydragonplug.com
+                  </a>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-              <p className="text-gray-600">[CONTACT_EMAIL]</p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <Phone className="w-6 h-6 text-green-800" />
+              
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
+                    <Phone className="w-5 h-5 text-green-800" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                  <a href="tel:8587520666" className="text-green-800 hover:text-green-900 font-medium">
+                    858-752-0666
+                  </a>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-              <p className="text-gray-600">[PHONE]</p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <MapPin className="w-6 h-6 text-green-800" />
+              
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
+                    <MapPin className="w-5 h-5 text-green-800" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Service Area</h3>
+                  <p className="text-gray-700">San Diego County + Southern California</p>
+                  <p className="text-sm text-gray-500 mt-1">Based in San Diego, CA 92122</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-              <p className="text-gray-600">[ADDRESS]</p>
+              
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-green-800" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Response Time</h3>
+                  <p className="text-gray-700">We reply within 1 business day.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -171,6 +247,18 @@ export default function Contact() {
                 />
               </div>
 
+              {/* Honeypot field for spam protection */}
+              <div style={{ position: 'absolute', left: '-9999px' }}>
+                <Input
+                  type="text"
+                  name="website"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  value={formData.honeypot}
+                  onChange={(e) => handleChange('honeypot', e.target.value)}
+                />
+              </div>
+
               <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">
                 {loading ? (
                   <>
@@ -187,14 +275,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Scheduler Embed Placeholder */}
-          <div className="mt-12 p-8 bg-white rounded-xl border-2 border-dashed border-gray-300 text-center">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Prefer to schedule directly?</h3>
-            <p className="text-gray-600 mb-4">Use our calendar scheduler below:</p>
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <p className="text-gray-500">[SCHEDULER_LINK - Embed Calendly or similar here]</p>
-            </div>
-          </div>
+
         </div>
       </section>
     </div>

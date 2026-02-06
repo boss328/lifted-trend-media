@@ -137,6 +137,34 @@ export default function Layout({ children, currentPageName }) {
       </main>
 
       <footer className="bg-[#0B0B0B] text-white mt-20">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Lifted Trend Media",
+            "description": "Marketing systems and content engines for farms, growers, and local food brands",
+            "email": "ahron@mydragonplug.com",
+            "telephone": "+1-858-752-0666",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "San Diego",
+              "addressRegion": "CA",
+              "postalCode": "92122",
+              "addressCountry": "US"
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "San Diego"
+              },
+              {
+                "@type": "State",
+                "name": "California"
+              }
+            ],
+            "url": typeof window !== 'undefined' ? window.location.origin : ''
+          })
+        }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -171,12 +199,9 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>[CONTACT_EMAIL]</li>
-                <li>[PHONE]</li>
-                <li>[ADDRESS]</li>
-                <li className="flex gap-3 mt-4">
-                  [SOCIAL_LINKS]
-                </li>
+                <li><a href="mailto:ahron@mydragonplug.com" className="hover:text-[#AED354] transition-colors">ahron@mydragonplug.com</a></li>
+                <li><a href="tel:8587520666" className="hover:text-[#AED354] transition-colors">858-752-0666</a></li>
+                <li>San Diego, CA 92122</li>
               </ul>
             </div>
           </div>
