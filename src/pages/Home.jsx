@@ -29,21 +29,21 @@ export default function Home() {
             We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B and B2C—without you living on your phone.
           </p>
           <Link to={createPageUrl('FarmGrowthAudit')}>
-            <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white text-lg px-8 py-6">
+            <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:outline hover:outline-2 hover:outline-[#AED354] text-white text-lg px-8 py-6 font-semibold transition-all">
               Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-left">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 text-[#AED354] mt-1 flex-shrink-0" />
               <p className="text-sm text-white"><strong>Web + SEO foundation</strong> that ranks and converts</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 text-[#AED354] mt-1 flex-shrink-0" />
               <p className="text-sm text-white"><strong>Intake forms + automation</strong> so leads don't get lost</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <CheckCircle className="w-5 h-5 text-[#AED354] mt-1 flex-shrink-0" />
               <p className="text-sm text-white"><strong>Video content</strong> that drives inquiries (not vanity views)</p>
             </div>
           </div>
@@ -80,25 +80,25 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <Target className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Website + SEO Foundation</h3>
+            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
+              <Target className="w-8 h-8 text-[#AED354] mb-4" />
+              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Website + SEO Foundation</h3>
               <p className="text-gray-700 mb-4">
                 Conversion-focused site built for farms (not a brochure). Local SEO setup, landing pages, tracking, and clear CTAs.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <Package className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Lead Pipeline (B2B + B2C)</h3>
+            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
+              <Package className="w-8 h-8 text-[#AED354] mb-4" />
+              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Lead Pipeline (B2B + B2C)</h3>
               <p className="text-gray-700 mb-4">
                 Separate intake flows, auto-confirmations, and follow-up that runs. You only talk to qualified buyers/customers.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <TrendingUp className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Video Content Engine</h3>
+            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
+              <TrendingUp className="w-8 h-8 text-[#AED354] mb-4" />
+              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Video Content Engine</h3>
               <p className="text-gray-700 mb-4">
                 Short-form storytelling that proves quality, harvest, and process. Designed to drive inquiries and orders—not just views.
               </p>
@@ -147,19 +147,19 @@ export default function Home() {
           <div className="bg-gray-50 rounded-xl border border-gray-200 p-8 mb-6">
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
                 <span><strong>Local rankings:</strong> "farm near me", "wholesale [product]", "[city] [product]"</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
                 <span><strong>Google Business Profile</strong> optimization + weekly updates</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
                 <span><strong>On-page SEO</strong> + landing pages by product + location</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
                 <span><strong>Tracking:</strong> calls, forms, direction clicks, and booked calls</span>
               </li>
             </ul>
@@ -180,23 +180,23 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How It Works</h2>
           <div className="space-y-8">
             <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Diagnose (Week 1)</h3>
+                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Diagnose (Week 1)</h3>
                 <p className="text-gray-700">15-min audit call. We review your current setup, identify leaks, and map out what to build first. 2 hours of your time total for info gathering.</p>
               </div>
             </div>
             <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Build (Weeks 2-4)</h3>
+                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Build (Weeks 2-4)</h3>
                 <p className="text-gray-700">We build: intake forms, landing pages, email automation, CRM pipeline, tracking. You focus on harvest. System launches in 30 days.</p>
               </div>
             </div>
             <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Optimize (Ongoing)</h3>
+                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Optimize (Ongoing)</h3>
                 <p className="text-gray-700">Training + handoff. You own the system. Optional: we monitor performance and optimize monthly (Growth/Scale packages only).</p>
               </div>
             </div>
@@ -222,8 +222,8 @@ export default function Home() {
                 <span>Most clients choose a monthly system to run content + lead conversion</span>
               </li>
             </ul>
-            <div className="bg-green-50 border-l-4 border-green-800 rounded-r-lg p-6">
-              <p className="font-semibold text-gray-900 mb-2">To get exact pricing:</p>
+            <div className="bg-[#F5F5F5] border-l-4 border-[#AED354] rounded-r-lg p-6">
+              <p className="font-semibold text-[#0B0B0B] mb-2">To get exact pricing:</p>
               <p className="text-gray-700">
                 Submit the 60-second intake and we'll send the exact options that fit your operation.
               </p>
@@ -264,7 +264,7 @@ export default function Home() {
                   <span>{faq.q}</span>
                   <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-green-800">{faq.a}</p>
+                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-[#AED354]">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -272,23 +272,23 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-green-800 text-white">
+      <section className="py-20 bg-[#0B0B0B] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Booking Side */}
             <div>
               <h2 className="text-3xl font-bold mb-4">Book a 15-Min Farm Growth Audit</h2>
-              <p className="text-green-100 mb-6">We review your setup and show you exactly what to build first.</p>
+              <p className="text-gray-300 mb-6">We review your setup and show you exactly what to build first.</p>
               <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 w-full">
+                <Button size="lg" className="bg-white text-[#0B0B0B] hover:bg-gray-100 hover:outline hover:outline-2 hover:outline-[#AED354] w-full font-semibold transition-all">
                   Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <p className="text-sm text-green-100 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
+              <p className="text-sm text-gray-400 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
             </div>
 
             {/* Quick Intake Side */}
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
+            <div className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
               <h3 className="text-xl font-bold mb-4">Or Get a Quote</h3>
               <QuickIntakeForm />
             </div>
@@ -339,7 +339,7 @@ function QuickIntakeForm() {
   if (submitted) {
     return (
       <div className="text-center py-8">
-        <CheckCircle className="w-12 h-12 text-green-300 mx-auto mb-3" />
+        <CheckCircle className="w-12 h-12 text-[#AED354] mx-auto mb-3" />
         <p className="text-white font-semibold">Thanks! We'll send you a quote within 24 hours.</p>
       </div>
     );
@@ -403,7 +403,7 @@ function QuickIntakeForm() {
         onChange={(e) => setFormData({...formData, season_start: e.target.value})}
         className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
       />
-      <Button type="submit" disabled={loading} className="w-full bg-white text-green-800 hover:bg-gray-100">
+      <Button type="submit" disabled={loading} className="w-full bg-white text-[#0B0B0B] hover:bg-gray-100 hover:outline hover:outline-2 hover:outline-[#AED354] font-semibold transition-all">
         {loading ? 'Sending...' : 'Get Quote'}
       </Button>
     </form>
