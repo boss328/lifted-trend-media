@@ -68,7 +68,7 @@ export default function Layout({ children, currentPageName }) {
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/11c28eae0_unnamed.png" 
                 alt="Lifted Trend Media logo"
-                className="h-10 md:h-12 w-auto"
+                className="h-11 md:h-11 w-auto"
               />
             </Link>
 

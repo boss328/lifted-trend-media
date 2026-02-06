@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
@@ -11,69 +11,45 @@ import RiskReversalSection from '../components/conversion/RiskReversalSection';
 import ROIFraming from '../components/conversion/ROIFraming';
 import ScopeControlWall from '../components/conversion/ScopeControlWall';
 import ClosingFAQ from '../components/conversion/ClosingFAQ';
-import QuoteModal from '../components/QuoteModal';
 
 export default function Home() {
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  
   const trackEvent = (eventName) => {
     base44.analytics.track({ eventName, properties: { page: 'home' } });
   };
 
   return (
     <div className="bg-white">
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-      
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/65 z-10"></div>
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/farm-hero-video.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px]">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Stop answering the same questions. Start closing qualified buyers.
+      <section className="relative bg-gradient-to-b from-green-50 to-white py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Stop answering the same questions.<br />Start closing qualified buyers.
             </h1>
-            <p className="text-xl text-white/90 mb-8 max-w-[640px]">
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Automated intake forms. Buyer qualification. Follow-up that runs itself. Track what converts. You focus on harvest.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={createPageUrl('FarmGrowthAudit')} onClick={() => trackEvent('hero_book_call_click')}>
-                <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white w-full sm:w-auto font-semibold">
-                  Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to={createPageUrl('Contact')} onClick={() => trackEvent('hero_book_call_click')}>
+                <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white w-full sm:w-auto">
+                  Book 30-Min Call <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                onClick={() => {
-                  setQuoteModalOpen(true);
-                  trackEvent('hero_get_quote_click');
-                }}
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0B0B0B] w-full sm:w-auto font-semibold"
-              >
-                Get a Quote (60 seconds)
-              </Button>
+              <Link to={createPageUrl('Contact')} onClick={() => trackEvent('hero_get_plan_click')}>
+                <Button size="lg" variant="outline" className="border-2 border-green-800 text-green-800 hover:bg-green-50 w-full sm:w-auto">
+                  See Pricing
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* The Problem */}
-      <section className="py-20 bg-white">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px]">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">You're Losing Sales Every Week</h2>
-            <p className="text-lg text-gray-600 mb-12">Most farms lose buyers because the system breaks down before the sale closes.</p>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">You're Losing Sales Every Week</h2>
+          <p className="text-center text-gray-600 mb-12">Most farms lose buyers because the system breaks down before the sale closes.</p>
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
               "Inquiries come in through 5 different channels. You miss half of them.",
@@ -81,15 +57,15 @@ export default function Home() {
               "Peak season hits. You're too busy to follow up. Sales die.",
               "You post content. Views go up. Orders don't. No tracking to prove what works."
             ].map((problem, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
+              <div key={idx} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-900">{problem}</p>
+                <p className="text-gray-700 font-medium">{problem}</p>
               </div>
             ))}
           </div>
-          <div>
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+          <div className="text-center">
+            <Link to={createPageUrl('Contact')}>
+              <Button className="bg-green-800 hover:bg-green-900 text-white">
                 Fix This in 30 Days <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
@@ -98,14 +74,12 @@ export default function Home() {
       </section>
 
       {/* What You Get */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What You Actually Get</h2>
-            <p className="text-lg text-gray-600">Not theory. Not templates. A system that runs without you.</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <div className="bg-white rounded-xl p-8 border border-gray-200">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What You Actually Get</h2>
+          <p className="text-center text-gray-600 mb-12">Not theory. Not templates. A system that runs without you.</p>
+          <div className="grid md:grid-cols-2 gap-12 mb-10">
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">For Wholesale (B2B)</h3>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
@@ -131,13 +105,13 @@ export default function Home() {
                 </li>
               </ul>
               <Link to={createPageUrl('WholesaleGrowth')}>
-                <Button className="w-full bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
                   See Wholesale System <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="bg-white rounded-xl p-8 border border-gray-200">
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">For Direct Sales (B2C)</h3>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
@@ -163,7 +137,7 @@ export default function Home() {
                 </li>
               </ul>
               <Link to={createPageUrl('B2CConversion')}>
-                <Button className="w-full bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
                   See B2C System <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -173,19 +147,17 @@ export default function Home() {
       </section>
 
       {/* Fit Check */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Are You a Fit?</h2>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Are You a Fit?</h2>
           <div className="space-y-6">
             <FitCheckSection />
             <NotAFitSection />
           </div>
-          <div className="mt-8">
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
-                Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Find Out If We Can Help <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
@@ -193,12 +165,12 @@ export default function Home() {
       </section>
 
       {/* 90-Day Roadmap */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <NinetyDayRoadmap />
-          <div className="mt-10">
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+          <div className="text-center mt-10">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
                 Start Week 1 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -207,20 +179,20 @@ export default function Home() {
       </section>
 
       {/* ROI Framing */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ROIFraming />
         </div>
       </section>
 
       {/* Risk Reversal */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <RiskReversalSection />
-          <div className="mt-8">
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
-                Book Your Free Audit <ArrowRight className="ml-2 w-5 h-5" />
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Lock In Your Guarantee <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
@@ -228,23 +200,21 @@ export default function Home() {
       </section>
 
       {/* Scope Control */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScopeControlWall />
         </div>
       </section>
 
       {/* Pricing Anchor */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Three Ways to Work With Us</h2>
-            <p className="text-lg text-gray-600">Pick the system that matches your capacity and growth stage.</p>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Three Ways to Work With Us</h2>
+          <p className="text-center text-gray-600 mb-12">Pick the system that matches your capacity and growth stage.</p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             {/* Foundation Package */}
-            <div className="bg-white rounded-xl border border-gray-200 p-8">
+            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Foundation</h3>
               <p className="text-gray-600 mb-6">The buyer pipeline. Everything you need to qualify and close.</p>
               
@@ -267,9 +237,9 @@ export default function Home() {
             </div>
 
             {/* Growth Package */}
-            <div className="bg-white rounded-xl border-2 border-[#AED354] p-8 relative">
+            <div className="bg-green-50 rounded-xl border-2 border-green-800 p-8 relative">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#AED354] text-[#0B0B0B] text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+                <span className="bg-green-800 text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth</h3>
               <p className="text-gray-600 mb-6">Foundation + content system to drive consistent orders.</p>
@@ -293,7 +263,7 @@ export default function Home() {
             </div>
 
             {/* Scale Package */}
-            <div className="bg-white rounded-xl border border-gray-200 p-8">
+            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Scale</h3>
               <p className="text-gray-600 mb-6">Growth + paid ads to multiply qualified leads.</p>
               
@@ -342,35 +312,25 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-[#0B0B0B] text-white rounded-xl p-8 text-center">
-            <p className="text-xl font-semibold mb-2">Minimum Engagement: Foundation Package</p>
-            <p className="text-white/80">All projects start with Foundation. Add Growth or Scale based on your capacity and goals. Typical investment: $3,500–$15,000 depending on package and customization.</p>
+          <div className="bg-green-800 text-white rounded-xl p-6 text-center">
+            <p className="text-lg font-semibold mb-2">Minimum Engagement: Foundation Package</p>
+            <p className="text-green-100 text-sm">All projects start with Foundation. Add Growth or Scale based on your capacity and goals. Typical investment: $3,500–$15,000 depending on package and customization.</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold w-full sm:w-auto">
-                Book a Free Audit <ArrowRight className="ml-2 w-5 h-5" />
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Book Call to Discuss Pricing <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => setQuoteModalOpen(true)}
-              className="border-2 border-[#0B0B0B] text-[#0B0B0B] hover:bg-[#0B0B0B] hover:text-white font-semibold w-full sm:w-auto"
-            >
-              Get a Quote (60 seconds)
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Objections */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">"But I Don't Have Time for This"</h2>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">"But I Don't Have Time for This"</h2>
           <div className="space-y-6 mb-10">
             <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
               <p className="font-bold text-gray-900 mb-2">"Harvest season is 6 weeks. I can't pause to build a website."</p>
@@ -389,9 +349,9 @@ export default function Home() {
               <p className="text-gray-700">We give you the exact shot list. Film on your phone. 2-minute videos. Post once a week. No guessing.</p>
             </div>
           </div>
-          <div>
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+          <div className="text-center">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
                 Talk Through Your Situation <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -400,12 +360,10 @@ export default function Home() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">30-Day Build. Lifetime Ownership.</h2>
-            <p className="text-lg text-gray-600">No monthly fees after launch. You own everything.</p>
-          </div>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">30-Day Build. Lifetime Ownership.</h2>
+          <p className="text-center text-gray-600 mb-12">No monthly fees after launch. You own everything.</p>
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             <div className="bg-white rounded-lg p-6 border border-gray-200">
               <div className="text-green-800 font-bold text-sm mb-2">WEEK 1</div>
@@ -438,9 +396,9 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div>
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+          <div className="text-center">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
                 Start in 7 Days <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -449,11 +407,9 @@ export default function Home() {
       </section>
 
       {/* Results */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px] mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Real Farms. Real Numbers.</h2>
-          </div>
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Real Farms. Real Numbers.</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-10">
             <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
               <div className="text-3xl font-bold text-green-800 mb-2">10 hrs/week saved</div>
@@ -476,9 +432,9 @@ export default function Home() {
               <p className="text-sm text-gray-600">— Heritage pork ranch, San Diego</p>
             </div>
           </div>
-          <div>
+          <div className="text-center">
             <Link to={createPageUrl('CaseStudies')}>
-              <Button className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
+              <Button className="bg-green-800 hover:bg-green-900 text-white">
                 Read Full Case Studies <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
@@ -487,13 +443,13 @@ export default function Home() {
       </section>
 
       {/* Closing FAQ */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ClosingFAQ />
-          <div className="mt-10">
-            <Link to={createPageUrl('FarmGrowthAudit')}>
-              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B]/90 text-white font-semibold">
-                Still Have Questions? Book a Free Audit <ArrowRight className="ml-2 w-5 h-5" />
+          <div className="text-center mt-10">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Still Have Questions? Ask Us <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
@@ -501,31 +457,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#0B0B0B] text-white">
-        <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[720px]">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Stop Losing Buyers. Start Closing Deals.
-            </h2>
-            <p className="text-xl text-white/80 mb-8">
-              15-minute audit call. We'll show you exactly what's broken and how to fix it. No pitch. Just a plan.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={createPageUrl('FarmGrowthAudit')} onClick={() => trackEvent('footer_cta_click')}>
-                <Button size="lg" className="bg-white text-[#0B0B0B] hover:bg-gray-100 w-full sm:w-auto font-semibold">
-                  Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => setQuoteModalOpen(true)}
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0B0B0B] w-full sm:w-auto font-semibold"
-              >
-                Get a Quote (60 seconds)
-              </Button>
-            </div>
-          </div>
+      <section className="py-20 bg-green-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Stop Losing Buyers. Start Closing Deals.
+          </h2>
+          <p className="text-xl text-green-100 mb-8">
+            30-minute call. We'll tell you exactly what to build and how long it takes. No pitch. Just a plan.
+          </p>
+          <Link to={createPageUrl('Contact')} onClick={() => trackEvent('footer_cta_click')}>
+            <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100">
+              Book 30-Min Call (Free) <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
