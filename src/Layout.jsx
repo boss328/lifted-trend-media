@@ -29,8 +29,12 @@ export default function Layout({ children, currentPageName }) {
       <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to={createPageUrl('Home')} className="text-2xl font-bold text-gray-900">
-              [LOGO] Lifted Trend Media
+            <Link to={createPageUrl('Home')} className="flex items-center">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/d839125b1_unnamed.jpg" 
+                alt="Lifted Trend Media logo" 
+                className="h-11 md:h-11 w-auto"
+              />
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -64,8 +68,8 @@ export default function Layout({ children, currentPageName }) {
                 )
               ))}
               <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button className="bg-green-800 hover:bg-green-900 text-white">
-                  Book 15-Min Audit Call
+                <Button className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:ring-2 hover:ring-[#AED354] text-white transition-all">
+                  Book a 15-Min Farm Growth Audit
                 </Button>
               </Link>
             </div>
@@ -119,8 +123,8 @@ export default function Layout({ children, currentPageName }) {
                 )
               ))}
               <Link to={createPageUrl('FarmGrowthAudit')} onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
-                  Book 15-Min Audit Call
+                <Button className="w-full bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:ring-2 hover:ring-[#AED354] text-white transition-all">
+                  Book a 15-Min Farm Growth Audit
                 </Button>
               </Link>
             </div>
@@ -132,11 +136,15 @@ export default function Layout({ children, currentPageName }) {
         {children}
       </main>
 
-      <footer className="bg-gray-900 text-white mt-20">
+      <footer className="bg-[#0B0B0B] text-white mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Lifted Trend Media</h3>
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/d839125b1_unnamed.jpg" 
+                alt="Lifted Trend Media logo" 
+                className="h-10 w-auto mb-4"
+              />
               <p className="text-gray-400 text-sm">
                 Marketing systems and content engines for farms, growers, and local food brands.
               </p>

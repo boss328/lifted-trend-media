@@ -19,7 +19,7 @@ export default function Home() {
         >
           <source src="[VIDEO_URL]" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -207,12 +207,12 @@ export default function Home() {
       {/* Investment */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Investment (ballpark)</h2>
-          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8">
-            <p className="text-gray-700 mb-6">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-8 text-center">Investment (ballpark)</h2>
+          <div className="bg-[#F5F5F5] rounded-xl border border-gray-200 p-8">
+            <p className="text-[#6B7280] mb-6">
               Most farms invest based on season timing, capacity, and how much you want us to handle.
             </p>
-            <ul className="space-y-3 text-gray-700 mb-6">
+            <ul className="space-y-3 text-[#6B7280] mb-6">
               <li className="flex items-start gap-2">
                 <span className="font-bold">•</span>
                 <span><strong>Foundation (Website + SEO + Lead Intake):</strong> starting at $_____</span>
@@ -222,9 +222,9 @@ export default function Home() {
                 <span>Most clients choose a monthly system to run content + lead conversion</span>
               </li>
             </ul>
-            <div className="bg-green-50 border-l-4 border-green-800 rounded-r-lg p-6">
-              <p className="font-semibold text-gray-900 mb-2">To get exact pricing:</p>
-              <p className="text-gray-700">
+            <div className="bg-white border-l-4 border-[#AED354] rounded-r-lg p-6">
+              <p className="font-semibold text-[#0B0B0B] mb-2">To get exact pricing:</p>
+              <p className="text-[#6B7280]">
                 Submit the 60-second intake and we'll send the exact options that fit your operation.
               </p>
             </div>
