@@ -284,7 +284,9 @@ export default function Home() {
                   Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <p className="text-sm text-gray-400 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
+              <p className="text-sm text-gray-400 mt-4">
+                Or call: <a href="tel:858-752-0666" className="hover:text-[#AED354] transition-colors">858-752-0666</a> | Email: <a href="mailto:ahron@mydragonplug.com" className="hover:text-[#AED354] transition-colors">ahron@mydragonplug.com</a>
+              </p>
             </div>
 
             {/* Quick Intake Side */}
@@ -309,11 +311,18 @@ function QuickIntakeForm() {
     phone: '',
     goal: '',
     capacity: '',
-    season_start: ''
+    season_start: '',
+    honeypot: '' // Honeypot field
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot spam protection
+    if (formData.honeypot) {
+      return;
+    }
+    
     setLoading(true);
     try {
       await base44.entities.WholesaleLead.create({
@@ -328,6 +337,25 @@ function QuickIntakeForm() {
         stage: 'New',
         score: 'Warm'
       });
+      
+      // Send email notification
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Lifted Trend Media Website',
+        to: 'ahron@mydragonplug.com',
+        subject: `New Quote Request: ${formData.name} - ${formData.farm}`,
+        body: `
+New quote request from homepage:
+
+Name: ${formData.name}
+Farm/Business: ${formData.farm}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Goal: ${formData.goal}
+Weekly Capacity: ${formData.capacity || 'Not provided'}
+Season Start: ${formData.season_start || 'Not provided'}
+        `
+      });
+      
       setSubmitted(true);
     } catch (error) {
       alert('Error submitting. Please try again.');
@@ -402,6 +430,16 @@ function QuickIntakeForm() {
         value={formData.season_start}
         onChange={(e) => setFormData({...formData, season_start: e.target.value})}
         className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+      />
+      {/* Honeypot field - hidden from users */}
+      <input
+        type="text"
+        name="honeypot"
+        value={formData.honeypot}
+        onChange={(e) => setFormData({...formData, honeypot: e.target.value})}
+        style={{ position: 'absolute', left: '-9999px' }}
+        tabIndex="-1"
+        autoComplete="off"
       />
       <Button type="submit" disabled={loading} className="w-full bg-white text-[#0B0B0B] hover:bg-gray-100 hover:outline hover:outline-2 hover:outline-[#AED354] font-semibold transition-all">
         {loading ? 'Sending...' : 'Get Quote'}

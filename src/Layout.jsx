@@ -8,6 +8,41 @@ export default function Layout({ children, currentPageName }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
 
+  // LocalBusiness structured data for SEO
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Lifted Trend Media",
+      "description": "Marketing systems and content engines for farms, growers, and local food brands",
+      "email": "ahron@mydragonplug.com",
+      "telephone": "+1-858-752-0666",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92122",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "San Diego County"
+        },
+        {
+          "@type": "Place",
+          "name": "Southern California"
+        }
+      ],
+      "url": window.location.origin,
+      "priceRange": "$$"
+    });
+    document.head.appendChild(script);
+    return () => document.head.removeChild(script);
+  }, []);
+
   const navigation = [
     { name: 'Home', path: createPageUrl('Home') },
     { 
@@ -171,12 +206,9 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>[CONTACT_EMAIL]</li>
-                <li>[PHONE]</li>
-                <li>[ADDRESS]</li>
-                <li className="flex gap-3 mt-4">
-                  [SOCIAL_LINKS]
-                </li>
+                <li><a href="mailto:ahron@mydragonplug.com" className="hover:text-[#AED354] transition-colors">ahron@mydragonplug.com</a></li>
+                <li><a href="tel:858-752-0666" className="hover:text-[#AED354] transition-colors">858-752-0666</a></li>
+                <li>San Diego, CA 92122</li>
               </ul>
             </div>
           </div>
