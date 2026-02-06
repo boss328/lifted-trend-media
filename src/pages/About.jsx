@@ -48,7 +48,7 @@ export default function About() {
               {
                 icon: Target,
                 title: 'Boundaries + Clarity',
-                desc: 'We don't take every project. We only work with farms that are ready to build a system, not just chase content.'
+                desc: "We don't take every project. We only work with farms that are ready to build a system, not just chase content."
               },
               {
                 icon: Shield,
@@ -58,7 +58,7 @@ export default function About() {
               {
                 icon: Users,
                 title: 'Partnership',
-                desc: 'We\'re not just a vendor. We\'re a partner in your growth—strategy, execution, and optimization.'
+                desc: "We're not just a vendor. We're a partner in your growth—strategy, execution, and optimization."
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-xl p-8 border border-gray-200 text-center">

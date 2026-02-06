@@ -33,13 +33,13 @@ export default function Solutions() {
         'Shot list (phone-filmable, no crew needed)',
         'Posting schedule + hooks that drive action',
         'DM/comment conversion templates',
-        'Performance review (what drives orders vs. what doesn\'t)',
+        "Performance review (what drives orders vs. what doesn't)",
         'Iteration based on conversion data'
       ],
       timeline: {
         '30 days': 'Strategy + shot list delivered',
         '60 days': 'First batch posted, conversion tracking live',
-        '90 days': 'Optimized based on what\'s working'
+        '90 days': "Optimized based on what's working"
       }
     },
     {
@@ -63,7 +63,7 @@ export default function Solutions() {
     {
       icon: DollarSign,
       title: 'Paid Search / Meta Ads',
-      desc: 'Only once your pipeline is ready. We don't run ads before the foundation is built.',
+      desc: "Only once your pipeline is ready. We don't run ads before the foundation is built.",
       deliverables: [
         'Conversion-ready landing pages',
         'Google Ads (Search + Performance Max)',

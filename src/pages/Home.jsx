@@ -199,7 +199,7 @@ export default function Home() {
             {[
               { q: 'Do you run ads?', a: 'We can, but we build the system first: website, intake forms, tracking, and content. Ads are an optional add-on once your pipeline is ready to scale.' },
               { q: 'How fast can we launch?', a: 'Foundation (site + forms + tracking) typically launches in 30–45 days. Content and optimization are ongoing after that.' },
-              { q: 'What do you need from me?', a: 'Product info, photos/videos (we'll give you a shot list), your availability windows, and clarity on capacity constraints. We handle the rest.' },
+              { q: 'What do you need from me?', a: "Product info, photos/videos (we'll give you a shot list), your availability windows, and clarity on capacity constraints. We handle the rest." },
               { q: 'Do you work with both wholesale and B2C?', a: 'Yes. Some clients need both systems, others focus on one. We build what matches your operational reality.' },
               { q: 'Do I own everything?', a: 'Yes. Website, content, tracking setup, and all login credentials transfer to you. No lock-in.' },
               { q: 'What if I already have a website?', a: 'We\'ll audit it first. Sometimes we improve what\'s there; other times a rebuild makes more sense. We\'ll tell you which.' },

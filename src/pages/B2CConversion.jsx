@@ -35,7 +35,7 @@ export default function B2CConversion() {
               'No follow-up system after someone DMs or comments',
               'Weak offer positioning (unclear what to buy and when)',
               'No tracking on what content drives orders',
-              'Capacity leaks: promising deliveries you can't fulfill'
+              "Capacity leaks: promising deliveries you can't fulfill"
             ].map((problem, idx) => (
               <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border border-red-100">
                 <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />

@@ -31,7 +31,7 @@ export default function WholesaleGrowth() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">The Problem</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              'Time-wasting inquiries from buyers who can't meet your minimums',
+              "Time-wasting inquiries from buyers who can't meet your minimums",
               'Unclear pricing, pack sizes, and availability',
               'No buyer qualification before the first call',
               'No follow-up automation after inquiries',
