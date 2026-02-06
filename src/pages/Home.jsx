@@ -2,8 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Users, TrendingUp, Clock, Target } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, TrendingUp, Clock, Target, X } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import NotAFitSection from '../components/conversion/NotAFitSection';
+import FitCheckSection from '../components/conversion/FitCheckSection';
+import NinetyDayRoadmap from '../components/conversion/NinetyDayRoadmap';
+import RiskReversalSection from '../components/conversion/RiskReversalSection';
+import ROIFraming from '../components/conversion/ROIFraming';
+import ScopeControlWall from '../components/conversion/ScopeControlWall';
+import ClosingFAQ from '../components/conversion/ClosingFAQ';
 
 export default function Home() {
   const trackEvent = (eventName) => {
@@ -136,6 +143,66 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Fit Check */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Are You a Fit?</h2>
+          <div className="space-y-6">
+            <FitCheckSection />
+            <NotAFitSection />
+          </div>
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Find Out If We Can Help <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 90-Day Roadmap */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <NinetyDayRoadmap />
+          <div className="text-center mt-10">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Start Week 1 <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Framing */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ROIFraming />
+        </div>
+      </section>
+
+      {/* Risk Reversal */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <RiskReversalSection />
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Lock In Your Guarantee <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Scope Control */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScopeControlWall />
         </div>
       </section>
 
@@ -375,30 +442,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Closing FAQ */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Straight Answers</h2>
-          <div className="space-y-6 mb-10">
-            {[
-              { q: 'How much time do I need to give you?', a: '1 hour in week 1. 30 minutes in week 4 for training. That\'s it. We do the rest.' },
-              { q: 'What if harvest starts before we finish?', a: 'We build while you harvest. You give us info once, we execute. System launches whether you\'re available or not.' },
-              { q: 'Do I need to know marketing?', a: 'No. We tell you exactly what to film, when to post, what to say. You follow the checklist.' },
-              { q: 'What if I get more orders than I can handle?', a: 'We build capacity caps into every form. Buyers only see what you can actually deliver. No overselling.' },
-              { q: 'Do you run ads?', a: 'Only after your system is proven. Most farms waste money on ads before the pipeline works. We fix the foundation first.' },
-              { q: 'What if my season is only 6 weeks long?', a: 'Perfect. We build it before season starts. You launch day 1 of harvest with buyers already in the pipeline.' },
-              { q: 'Do I own this or pay monthly forever?', a: 'You own it. One-time build fee. Optional monthly support if you want ongoing content + optimization.' }
-            ].map((faq, idx) => (
-              <details key={idx} className="bg-white rounded-lg p-6 border border-gray-200">
-                <summary className="font-semibold text-gray-900 cursor-pointer">{faq.q}</summary>
-                <p className="text-gray-700 mt-3">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-          <div className="text-center">
+          <ClosingFAQ />
+          <div className="text-center mt-10">
             <Link to={createPageUrl('Contact')}>
               <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Ask Your Specific Question <ArrowRight className="ml-2 w-5 h-5" />
+                Still Have Questions? Ask Us <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>

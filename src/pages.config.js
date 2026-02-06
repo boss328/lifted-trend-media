@@ -61,6 +61,8 @@ import Terms from './pages/Terms';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
+import ProofLibrary from './pages/ProofLibrary';
+import FarmGrowthAudit from './pages/FarmGrowthAudit';
 import __Layout from './Layout.jsx';
 
 
@@ -79,6 +81,8 @@ export const PAGES = {
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
+    "ProofLibrary": ProofLibrary,
+    "FarmGrowthAudit": FarmGrowthAudit,
 }
 
 export const pagesConfig = {
