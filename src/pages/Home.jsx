@@ -243,8 +243,8 @@ export default function Home() {
                 a: 'Yes. Season Sprint: 10-day build. Landing page, intake form, tracking, and automation live before first harvest. Full system optimization continues post-launch.'
               },
               {
-                q: 'What if leads don\'t come in right away?',
-                a: 'That\'s normal. We launch with tracking so we can see exactly where the bottleneck is: traffic (visibility) or conversion (site/forms/follow-up). You get a post-launch optimization window included, where we improve pages, CTAs, forms, and follow-up based on real data. If you want faster volume, we can add Google Search or Meta once tracking is live.'
+                q: "What if leads don't come in right away?",
+                a: "That's normal. We launch with tracking so we can see exactly where the bottleneck is: traffic (visibility) or conversion (site/forms/follow-up). You get a post-launch optimization window included, where we improve pages, CTAs, forms, and follow-up based on real data. If you want faster volume, we can add Google Search or Meta once tracking is live."
               },
               {
                 q: 'What if I get more orders than I can handle?',
