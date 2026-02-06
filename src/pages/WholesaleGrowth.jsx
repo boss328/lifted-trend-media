@@ -35,8 +35,8 @@ export default function WholesaleGrowth() {
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
               '"Can you do 5 cases?" No. Minimum is 50. Call ends.',
-              '"What's your pricing?" Depends on volume and frequency. They never follow up.',
-              '"Can you deliver to San Francisco?" No. You're 300 miles south. Wasted call.',
+              '"What\'s your pricing?" Depends on volume and frequency. They never follow up.',
+              '"Can you deliver to San Francisco?" No. You\'re 300 miles south. Wasted call.',
               'Buyer sounds excited. You send pricing. Crickets for 3 weeks. Deal dies.'
             ].map((problem, idx) => (
               <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border-l-4 border-red-600">

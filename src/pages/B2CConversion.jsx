@@ -36,7 +36,7 @@ export default function B2CConversion() {
             {[
               '"How much?" You reply with pricing. They disappear.',
               '"Do you deliver?" You say yes. They ask 4 more questions. Never buy.',
-              '"When's your next drop?" You tell them. They forget. No reminder system.',
+              '"When\'s your next drop?" You tell them. They forget. No reminder system.',
               '200 likes on your post. 3 DMs. 0 orders. No way to track what actually converts.'
             ].map((problem, idx) => (
               <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border-l-4 border-red-600">
