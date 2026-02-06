@@ -35,6 +35,14 @@ export default function WholesaleIntakeForm() {
     biggest_bottleneck: '',
     bottleneck_details: '',
     success_90_days: '',
+    is_decision_maker: false,
+    budget_range: '',
+    season_start_date: '',
+    season_end_date: '',
+    response_speed: 'Within 24 hours',
+    score: 'Warm',
+    source: 'Website Form',
+    stage: 'New',
     tags: ['Wholesale']
   });
 
@@ -243,6 +251,55 @@ export default function WholesaleIntakeForm() {
           onChange={(e) => handleChange('success_90_days', e.target.value)}
           rows={3}
         />
+      </div>
+
+      <div>
+        <Label htmlFor="season_start_date">Season Start Date</Label>
+        <Input
+          id="season_start_date"
+          type="date"
+          value={formData.season_start_date}
+          onChange={(e) => handleChange('season_start_date', e.target.value)}
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="season_end_date">Season End Date</Label>
+        <Input
+          id="season_end_date"
+          type="date"
+          value={formData.season_end_date}
+          onChange={(e) => handleChange('season_end_date', e.target.value)}
+        />
+      </div>
+
+      <div>
+        <Label htmlFor="budget_range">Budget Range</Label>
+        <Select value={formData.budget_range} onValueChange={(val) => handleChange('budget_range', val)}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select budget range" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Under $5K">Under $5K</SelectItem>
+            <SelectItem value="$5K-$10K">$5K-$10K</SelectItem>
+            <SelectItem value="$10K-$20K">$10K-$20K</SelectItem>
+            <SelectItem value="$20K+">$20K+</SelectItem>
+            <SelectItem value="Not sure">Not sure</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="decision_maker"
+          checked={formData.is_decision_maker}
+          onChange={(e) => handleChange('is_decision_maker', e.target.checked)}
+          className="w-4 h-4"
+        />
+        <Label htmlFor="decision_maker" className="cursor-pointer">
+          I am the decision-maker for this project
+        </Label>
       </div>
 
       <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">

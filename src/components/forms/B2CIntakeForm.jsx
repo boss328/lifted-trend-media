@@ -25,6 +25,12 @@ export default function B2CIntakeForm() {
     desired_outcome_30: '',
     desired_outcome_60: '',
     desired_outcome_90: '',
+    is_decision_maker: false,
+    budget_range: '',
+    response_speed: 'Within 24 hours',
+    score: 'Warm',
+    source: 'Website Form',
+    stage: 'New',
     tags: ['B2C']
   });
 
@@ -37,8 +43,24 @@ export default function B2CIntakeForm() {
     setLoading(true);
     
     try {
-      await base44.entities.B2CLead.create(formData);
-      base44.analytics.track({ eventName: 'b2c_audit_submit', properties: { success: true } });
+      // Auto-score based on criteria
+      let score = 'Warm';
+      if (formData.is_decision_maker && formData.budget_range && formData.budget_range !== 'Under $5K' && formData.monthly_revenue_range && formData.monthly_revenue_range !== 'Under $5K') {
+        score = 'Hot';
+      } else if (!formData.is_decision_maker || formData.monthly_revenue_range === 'Under $5K') {
+        score = 'Cold';
+      }
+      
+      const leadData = { ...formData, score };
+      await base44.entities.B2CLead.create(leadData);
+      
+      // Trigger notification automation
+      await base44.functions.invoke('sendLeadNotification', {
+        leadData,
+        leadType: 'B2C'
+      });
+      
+      base44.analytics.track({ eventName: 'b2c_audit_submit', properties: { success: true, score } });
       navigate(createPageUrl('ThankYouB2C'));
     } catch (error) {
       alert('Error submitting form. Please try again.');
@@ -176,6 +198,35 @@ export default function B2CIntakeForm() {
           onChange={(e) => handleChange('desired_outcome_90', e.target.value)}
           rows={2}
         />
+      </div>
+
+      <div>
+        <Label htmlFor="budget_range">Budget Range</Label>
+        <Select value={formData.budget_range} onValueChange={(val) => setFormData({...formData, budget_range: val})}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select budget range" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Under $5K">Under $5K</SelectItem>
+            <SelectItem value="$5K-$10K">$5K-$10K</SelectItem>
+            <SelectItem value="$10K-$20K">$10K-$20K</SelectItem>
+            <SelectItem value="$20K+">$20K+</SelectItem>
+            <SelectItem value="Not sure">Not sure</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <input
+          type="checkbox"
+          id="decision_maker_b2c"
+          checked={formData.is_decision_maker}
+          onChange={(e) => setFormData({...formData, is_decision_maker: e.target.checked})}
+          className="w-4 h-4"
+        />
+        <Label htmlFor="decision_maker_b2c" className="cursor-pointer">
+          I am the decision-maker for this project
+        </Label>
       </div>
 
       <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">
