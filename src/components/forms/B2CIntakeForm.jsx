@@ -31,7 +31,8 @@ export default function B2CIntakeForm() {
     score: 'Warm',
     source: 'Website Form',
     stage: 'New',
-    tags: ['B2C']
+    tags: ['B2C'],
+    honeypot: ''
   });
 
   const handleChange = (field, value) => {
@@ -40,6 +41,18 @@ export default function B2CIntakeForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot spam protection
+    if (formData.honeypot) {
+      return;
+    }
+    
+    // Basic validation
+    if (!formData.business_name || !formData.email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
     setLoading(true);
     
     try {
@@ -51,13 +64,35 @@ export default function B2CIntakeForm() {
         score = 'Cold';
       }
       
-      const leadData = { ...formData, score };
+      const { honeypot, ...cleanData } = formData;
+      const leadData = { ...cleanData, score };
       await base44.entities.B2CLead.create(leadData);
       
-      // Trigger notification automation
-      await base44.functions.invoke('sendLeadNotification', {
-        leadData,
-        leadType: 'B2C'
+      // Send notification email
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Lifted Trend Media - B2C Lead',
+        to: 'ahron@mydragonplug.com',
+        subject: `New B2C Lead: ${leadData.business_name} (${score})`,
+        body: `
+New B2C intake submission:
+
+Business: ${leadData.business_name}
+Contact: ${leadData.contact_name || 'Not provided'}
+Email: ${leadData.email}
+Phone: ${leadData.phone || 'Not provided'}
+
+Offer/Product: ${leadData.offer_product || 'Not provided'}
+Monthly Revenue: ${leadData.monthly_revenue_range || 'Not provided'}
+Biggest Leak: ${leadData.biggest_conversion_leak || 'Not provided'}
+
+Budget: ${leadData.budget_range || 'Not provided'}
+Decision Maker: ${leadData.is_decision_maker ? 'Yes' : 'No'}
+Lead Score: ${score}
+
+30-day outcome: ${leadData.desired_outcome_30 || 'None'}
+60-day outcome: ${leadData.desired_outcome_60 || 'None'}
+90-day outcome: ${leadData.desired_outcome_90 || 'None'}
+        `
       });
       
       base44.analytics.track({ eventName: 'b2c_audit_submit', properties: { success: true, score } });
@@ -227,6 +262,18 @@ export default function B2CIntakeForm() {
         <Label htmlFor="decision_maker_b2c" className="cursor-pointer">
           I am the decision-maker for this project
         </Label>
+      </div>
+
+      {/* Honeypot field for spam protection */}
+      <div style={{ position: 'absolute', left: '-9999px' }}>
+        <Input
+          type="text"
+          name="website"
+          tabIndex="-1"
+          autoComplete="off"
+          value={formData.honeypot}
+          onChange={(e) => handleChange('honeypot', e.target.value)}
+        />
       </div>
 
       <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">

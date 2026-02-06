@@ -43,7 +43,8 @@ export default function WholesaleIntakeForm() {
     score: 'Warm',
     source: 'Website Form',
     stage: 'New',
-    tags: ['Wholesale']
+    tags: ['Wholesale'],
+    honeypot: ''
   });
 
   const handleChange = (field, value) => {
@@ -52,6 +53,18 @@ export default function WholesaleIntakeForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot spam protection
+    if (formData.honeypot) {
+      return;
+    }
+    
+    // Basic validation
+    if (!formData.business_name || !formData.contact_name || !formData.email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
     setLoading(true);
     
     try {
@@ -63,13 +76,37 @@ export default function WholesaleIntakeForm() {
         score = 'Cold';
       }
       
-      const leadData = { ...formData, score };
+      const { honeypot, ...cleanData } = formData;
+      const leadData = { ...cleanData, score };
       await base44.entities.WholesaleLead.create(leadData);
       
-      // Trigger notification automation
-      await base44.functions.invoke('sendLeadNotification', {
-        leadData,
-        leadType: 'Wholesale'
+      // Send notification email
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Lifted Trend Media - Wholesale Lead',
+        to: 'ahron@mydragonplug.com',
+        subject: `New Wholesale Lead: ${leadData.business_name} (${score})`,
+        body: `
+New wholesale intake submission:
+
+Business: ${leadData.business_name}
+Contact: ${leadData.contact_name}
+Email: ${leadData.email}
+Phone: ${leadData.phone || 'Not provided'}
+Location: ${leadData.location || 'Not provided'}
+
+Product Category: ${leadData.product_category || 'Not provided'}
+Products: ${leadData.products_varieties || 'Not provided'}
+Weekly Volume: ${leadData.weekly_volume_capacity || 'Not provided'}
+
+Has Wholesale Buyers: ${leadData.has_wholesale_buyers || 'Not provided'}
+Biggest Bottleneck: ${leadData.biggest_bottleneck || 'Not provided'}
+
+Budget: ${leadData.budget_range || 'Not provided'}
+Decision Maker: ${leadData.is_decision_maker ? 'Yes' : 'No'}
+Lead Score: ${score}
+
+90-day success: ${leadData.success_90_days || 'Not provided'}
+        `
       });
       
       base44.analytics.track({ eventName: 'wholesale_intake_submit', properties: { success: true, score } });
@@ -300,6 +337,18 @@ export default function WholesaleIntakeForm() {
         <Label htmlFor="decision_maker" className="cursor-pointer">
           I am the decision-maker for this project
         </Label>
+      </div>
+
+      {/* Honeypot field for spam protection */}
+      <div style={{ position: 'absolute', left: '-9999px' }}>
+        <Input
+          type="text"
+          name="website"
+          tabIndex="-1"
+          autoComplete="off"
+          value={formData.honeypot}
+          onChange={(e) => handleChange('honeypot', e.target.value)}
+        />
       </div>
 
       <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">

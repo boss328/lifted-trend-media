@@ -15,20 +15,56 @@ export default function FarmGrowthAudit() {
     email: '',
     website: '',
     current_situation: '',
-    biggest_bottleneck: ''
+    biggest_bottleneck: '',
+    honeypot: ''
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Honeypot spam protection
+    if (formData.honeypot) {
+      return;
+    }
+    
+    // Basic validation
+    if (!formData.business_name || !formData.contact_name || !formData.email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
     setLoading(true);
     try {
+      const { honeypot, ...cleanData } = formData;
       await base44.entities.WholesaleLead.create({
-        ...formData,
+        ...cleanData,
         stage: 'New',
         score: 'Warm',
         source: 'Free Audit',
         tags: ['Audit Request']
       });
+      
+      // Send notification email
+      await base44.integrations.Core.SendEmail({
+        from_name: 'Lifted Trend Media - Farm Audit',
+        to: 'ahron@mydragonplug.com',
+        subject: `New Farm Growth Audit Request: ${cleanData.business_name}`,
+        body: `
+New farm growth audit request:
+
+Business: ${cleanData.business_name}
+Contact: ${cleanData.contact_name}
+Email: ${cleanData.email}
+Website: ${cleanData.website || 'Not provided'}
+
+Current Situation:
+${cleanData.current_situation}
+
+Biggest Bottleneck:
+${cleanData.biggest_bottleneck}
+        `
+      });
+      
       setSubmitted(true);
     } catch (error) {
       alert('Error submitting. Please try again.');
@@ -170,6 +206,18 @@ export default function FarmGrowthAudit() {
                   onChange={(e) => setFormData({...formData, biggest_bottleneck: e.target.value})}
                   placeholder="e.g., Spending 10 hours/week answering the same questions. No tracking on what works. Orders come in chaotically."
                   rows={4}
+                />
+              </div>
+
+              {/* Honeypot field for spam protection */}
+              <div style={{ position: 'absolute', left: '-9999px' }}>
+                <Input
+                  type="text"
+                  name="website_url"
+                  tabIndex="-1"
+                  autoComplete="off"
+                  value={formData.honeypot}
+                  onChange={(e) => setFormData({...formData, honeypot: e.target.value})}
                 />
               </div>
 
