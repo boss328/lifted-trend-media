@@ -96,8 +96,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Proof */}
+      {/* SEO/Google */}
       <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Get Found on Google</h2>
+          <p className="text-lg text-gray-600 mb-10 text-center">Where high-intent buyers already search</p>
+          
+          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8 mb-6">
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span><strong>Local rankings:</strong> "farm near me", "wholesale [product]", "[city] [product]"</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span><strong>Google Business Profile</strong> optimization + weekly updates</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span><strong>On-page SEO</strong> + landing pages by product + location</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span><strong>Tracking:</strong> calls, forms, direction clicks, and booked calls</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+            <h3 className="font-bold text-gray-900 mb-2">Optional: Google Shopping / Merchant Center</h3>
+            <p className="text-sm text-gray-700">
+              Best for farms selling shippable products (plants, cuttings, boxes, packaged goods). We set up the feed and listings so products show up when people search to buy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What We Ship</h2>
           <div className="grid md:grid-cols-2 gap-8">
