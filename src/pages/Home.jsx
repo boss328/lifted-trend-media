@@ -139,6 +139,127 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Anchor */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Three Ways to Work With Us</h2>
+          <p className="text-center text-gray-600 mb-12">Pick the system that matches your capacity and growth stage.</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            {/* Foundation Package */}
+            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Foundation</h3>
+              <p className="text-gray-600 mb-6">The buyer pipeline. Everything you need to qualify and close.</p>
+              
+              <div className="mb-6">
+                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Website (5 pages)</li>
+                  <li>• Intake form + qualification logic</li>
+                  <li>• Email automation</li>
+                  <li>• CRM pipeline setup</li>
+                  <li>• Conversion tracking</li>
+                  <li>• 30-day build timeline</li>
+                </ul>
+              </div>
+              
+              <div className="pt-6 border-t border-gray-200">
+                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
+                <p className="text-sm text-gray-600">Farms with 0-3 wholesale accounts OR direct sales under $5K/month. Need the system, not the marketing.</p>
+              </div>
+            </div>
+
+            {/* Growth Package */}
+            <div className="bg-green-50 rounded-xl border-2 border-green-800 p-8 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-green-800 text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth</h3>
+              <p className="text-gray-600 mb-6">Foundation + content system to drive consistent orders.</p>
+              
+              <div className="mb-6">
+                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Everything in Foundation</li>
+                  <li>• Content strategy + shot list</li>
+                  <li>• Posting schedule (90 days)</li>
+                  <li>• Hook templates</li>
+                  <li>• Performance tracking</li>
+                  <li>• 45-day build timeline</li>
+                </ul>
+              </div>
+              
+              <div className="pt-6 border-t border-gray-300">
+                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
+                <p className="text-sm text-gray-600">Farms ready to scale from 3 to 10+ accounts OR B2C brands doing $5K-$20K/month. Need pipeline + traffic.</p>
+              </div>
+            </div>
+
+            {/* Scale Package */}
+            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Scale</h3>
+              <p className="text-gray-600 mb-6">Growth + paid ads to multiply qualified leads.</p>
+              
+              <div className="mb-6">
+                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Everything in Growth</li>
+                  <li>• Google Ads setup</li>
+                  <li>• Meta Ads (IG/FB)</li>
+                  <li>• Landing page optimization</li>
+                  <li>• Monthly performance reports</li>
+                  <li>• 60-day build + launch</li>
+                </ul>
+              </div>
+              
+              <div className="pt-6 border-t border-gray-200">
+                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
+                <p className="text-sm text-gray-600">Established farms with proven product-market fit. Ready to spend on ads to reach more buyers faster.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 mb-6">
+            <h3 className="font-bold text-gray-900 mb-4">Scope Boundaries</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <p className="font-semibold text-gray-900 mb-2">✓ INCLUDED:</p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Up to 2 revision rounds per deliverable</li>
+                  <li>• Standard form fields + automations</li>
+                  <li>• Basic CRM setup (stages + notifications)</li>
+                  <li>• Standard integrations (email, calendar, payment)</li>
+                  <li>• Training session + documentation</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 mb-2">✗ NOT INCLUDED:</p>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Unlimited revisions</li>
+                  <li>• Custom software development</li>
+                  <li>• Ongoing content creation (post-launch)</li>
+                  <li>• Ad spend budget (client pays directly)</li>
+                  <li>• Phone/email support after handoff</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-800 text-white rounded-xl p-6 text-center">
+            <p className="text-lg font-semibold mb-2">Minimum Engagement: Foundation Package</p>
+            <p className="text-green-100 text-sm">All projects start with Foundation. Add Growth or Scale based on your capacity and goals. Typical investment: $3,500–$15,000 depending on package and customization.</p>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Book Call to Discuss Pricing <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Objections */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
