@@ -51,23 +51,23 @@ import About from './pages/About';
 import B2CConversion from './pages/B2CConversion';
 import CaseStudies from './pages/CaseStudies';
 import Contact from './pages/Contact';
+import FarmGrowthAudit from './pages/FarmGrowthAudit';
+import FlowerFarmGrowth from './pages/FlowerFarmGrowth';
+import FruitFarmGrowth from './pages/FruitFarmGrowth';
 import Home from './pages/Home';
 import LeadsDashboard from './pages/LeadsDashboard';
+import NurseryGrowth from './pages/NurseryGrowth';
+import OrchardGrowth from './pages/OrchardGrowth';
 import Privacy from './pages/Privacy';
 import Process from './pages/Process';
+import ProofLibrary from './pages/ProofLibrary';
+import RanchGrowth from './pages/RanchGrowth';
 import Resources from './pages/Resources';
 import Solutions from './pages/Solutions';
 import Terms from './pages/Terms';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
-import ProofLibrary from './pages/ProofLibrary';
-import FarmGrowthAudit from './pages/FarmGrowthAudit';
-import NurseryGrowth from './pages/NurseryGrowth';
-import FruitFarmGrowth from './pages/FruitFarmGrowth';
-import RanchGrowth from './pages/RanchGrowth';
-import OrchardGrowth from './pages/OrchardGrowth';
-import FlowerFarmGrowth from './pages/FlowerFarmGrowth';
 import __Layout from './Layout.jsx';
 
 
@@ -76,23 +76,23 @@ export const PAGES = {
     "B2CConversion": B2CConversion,
     "CaseStudies": CaseStudies,
     "Contact": Contact,
+    "FarmGrowthAudit": FarmGrowthAudit,
+    "FlowerFarmGrowth": FlowerFarmGrowth,
+    "FruitFarmGrowth": FruitFarmGrowth,
     "Home": Home,
     "LeadsDashboard": LeadsDashboard,
+    "NurseryGrowth": NurseryGrowth,
+    "OrchardGrowth": OrchardGrowth,
     "Privacy": Privacy,
     "Process": Process,
+    "ProofLibrary": ProofLibrary,
+    "RanchGrowth": RanchGrowth,
     "Resources": Resources,
     "Solutions": Solutions,
     "Terms": Terms,
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
-    "ProofLibrary": ProofLibrary,
-    "FarmGrowthAudit": FarmGrowthAudit,
-    "NurseryGrowth": NurseryGrowth,
-    "FruitFarmGrowth": FruitFarmGrowth,
-    "RanchGrowth": RanchGrowth,
-    "OrchardGrowth": OrchardGrowth,
-    "FlowerFarmGrowth": FlowerFarmGrowth,
 }
 
 export const pagesConfig = {

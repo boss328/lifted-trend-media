@@ -204,35 +204,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Anchor */}
+      {/* Investment */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Pricing</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Investment (ballpark)</h2>
           <div className="bg-gray-50 rounded-xl border border-gray-200 p-8">
-            <div className="text-center mb-6">
-              <div className="text-4xl font-bold text-gray-900 mb-2">$8K–$15K</div>
-              <p className="text-gray-600">Foundation System (one-time build fee)</p>
-            </div>
-            <div className="space-y-4 mb-6">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">What affects price:</h4>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• Complexity (single product vs. 50+ SKUs)</li>
-                  <li>• Channels (B2B only vs. B2B + B2C + CSA + U-pick)</li>
-                  <li>• Integrations (payment processing, scheduling, inventory sync)</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Add-ons:</h4>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• B2B Growth: +$3K–$5K</li>
-                  <li>• B2C Conversion: +$3K–$5K</li>
-                  <li>• Ongoing optimization: $1.5K–$3K/month (optional)</li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-yellow-50 border-l-4 border-yellow-600 rounded-r-lg p-4">
-              <p className="text-sm text-gray-900"><strong>Minimum engagement:</strong> Foundation System (30 days). Growth/Scale require 2-3 month minimum for optimization cycles.</p>
+            <p className="text-gray-700 mb-6">
+              Most farms invest based on season timing, capacity, and how much you want us to handle.
+            </p>
+            <ul className="space-y-3 text-gray-700 mb-6">
+              <li className="flex items-start gap-2">
+                <span className="font-bold">•</span>
+                <span><strong>Foundation (Website + SEO + Lead Intake):</strong> starting at $_____</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="font-bold">•</span>
+                <span>Most clients choose a monthly system to run content + lead conversion</span>
+              </li>
+            </ul>
+            <div className="bg-green-50 border-l-4 border-green-800 rounded-r-lg p-6">
+              <p className="font-semibold text-gray-900 mb-2">To get exact pricing:</p>
+              <p className="text-gray-700">
+                Submit the 60-second intake and we'll send the exact options that fit your operation.
+              </p>
             </div>
           </div>
         </div>
