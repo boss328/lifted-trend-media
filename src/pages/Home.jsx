@@ -12,10 +12,10 @@ export default function Home() {
       <section className="bg-gradient-to-b from-green-50 to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Stop Losing Orders to DMs and Email Chaos
+            Turn your farm's story into buyers.
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8">
-            We build buyer pipelines for farms, ranches, and nurseries. Intake forms qualify leads. Automation handles follow-up. You close deals.
+            We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B (wholesale) and B2C—without you living on your phone.
           </p>
           <Link to={createPageUrl('FarmGrowthAudit')}>
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white text-lg px-8 py-6">
@@ -25,15 +25,15 @@ export default function Home() {
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-left">
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Systems-first:</strong> Not branding or content. We build pipelines that work without you.</p>
+              <p className="text-sm text-gray-700"><strong>Web + SEO foundation</strong> that ranks and converts</p>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Ag-first:</strong> Built for seasonality, capacity limits, and wholesale logistics.</p>
+              <p className="text-sm text-gray-700"><strong>Intake forms + automation</strong> so leads don't get lost</p>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Tracked results:</strong> Every form, email, and conversion is measured.</p>
+              <p className="text-sm text-gray-700"><strong>Video content</strong> that drives inquiries (not vanity views)</p>
             </div>
           </div>
         </div>
