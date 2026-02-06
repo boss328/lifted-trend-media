@@ -68,7 +68,7 @@ export default function Layout({ children, currentPageName }) {
                 )
               ))}
               <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:outline hover:outline-2 hover:outline-[#AED354] text-white font-semibold transition-all">
+                <Button className="bg-[#1F3D2B] hover:bg-[#2A553A] text-white font-semibold transition-all">
                   Book a 15-Min Farm Growth Audit
                 </Button>
               </Link>

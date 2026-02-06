@@ -11,7 +11,7 @@ export default function WholesaleGrowth() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F7F3E8] to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Qualify Wholesale Buyers Before You Pick Up the Phone
@@ -46,7 +46,7 @@ export default function WholesaleGrowth() {
           </div>
           <div className="text-center">
             <a href="#wholesale-form">
-              <Button className="bg-green-800 hover:bg-green-900 text-white">
+              <Button className="bg-[#1F3D2B] hover:bg-[#2A553A] text-white">
                 Fix This With Automated Intake <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </a>
@@ -55,7 +55,7 @@ export default function WholesaleGrowth() {
       </section>
 
       {/* The System */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">How the Wholesale System Works</h2>
           <p className="text-center text-gray-600 mb-12">Three steps. All automated. Runs without you.</p>
@@ -81,7 +81,7 @@ export default function WholesaleGrowth() {
             </div>
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10">
+          <div className="bg-[#EEF3EC] border border-[#6B8F71] rounded-xl p-6 mb-10">
             <h3 className="font-bold text-gray-900 mb-3">What Happens During Peak Season?</h3>
             <p className="text-gray-700">System keeps running. Buyers submit forms. They get wholesale kits. CRM tracks everything. You focus on harvest. Follow up when you have bandwidth.</p>
           </div>
@@ -136,7 +136,7 @@ export default function WholesaleGrowth() {
       </section>
 
       {/* Wholesale Intake Form */}
-      <section id="wholesale-form" className="py-16 bg-gray-50">
+      <section id="wholesale-form" className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Wholesale Intake</h2>
@@ -144,7 +144,7 @@ export default function WholesaleGrowth() {
               Fill out the form below and we'll send you a custom plan within 48 hours.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
+          <div className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm">
             <WholesaleIntakeForm />
           </div>
         </div>

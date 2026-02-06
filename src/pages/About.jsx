@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F7F3E8] to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Built for Growers. Focused on Systems.
@@ -40,7 +40,7 @@ export default function About() {
       </section>
 
       {/* How We Work */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How We Work</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -61,7 +61,7 @@ export default function About() {
                 desc: "We're not just a vendor. We're a partner in your growth—strategy, execution, and optimization."
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-8 border border-gray-200 text-center">
+              <div key={idx} className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                   <item.icon className="w-8 h-8 text-green-800" />
                 </div>
@@ -83,7 +83,7 @@ export default function About() {
             Book a strategy call and we'll show you exactly what to build first.
           </p>
           <Link to={createPageUrl('Contact')}>
-            <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+            <Button size="lg" className="bg-[#1F3D2B] hover:bg-[#2A553A] text-white">
               Book Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>

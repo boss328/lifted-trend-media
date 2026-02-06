@@ -91,7 +91,7 @@ ${cleanData.biggest_bottleneck}
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F7F3E8] to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Free Farm Growth Audit
@@ -134,7 +134,7 @@ ${cleanData.biggest_bottleneck}
             </div>
           </div>
 
-          <div className="bg-yellow-50 border-l-4 border-yellow-600 rounded-r-xl p-6 mb-12">
+          <div className="bg-[#EEF3EC] border-l-4 border-[#6B8F71] rounded-r-xl p-6 mb-12">
             <p className="text-gray-900 font-semibold mb-2">No Pitch. No Sales Call.</p>
             <p className="text-gray-700">
               We send the audit. You decide if you want to work with us. If not, you still have the plan.
@@ -144,9 +144,9 @@ ${cleanData.biggest_bottleneck}
       </section>
 
       {/* Form */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
+          <div className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Request Your Free Audit</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -221,7 +221,7 @@ ${cleanData.biggest_bottleneck}
                 />
               </div>
 
-              <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">
+              <Button type="submit" disabled={loading} className="w-full bg-[#1F3D2B] hover:bg-[#2A553A] text-white">
                 {loading ? 'Submitting...' : 'Get My Free Audit'}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>

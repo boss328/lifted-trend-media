@@ -11,7 +11,7 @@ export default function B2CConversion() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F7F3E8] to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Turn DMs Into Orders. Not "I'll Think About It."
@@ -46,7 +46,7 @@ export default function B2CConversion() {
           </div>
           <div className="text-center">
             <a href="#b2c-form">
-              <Button className="bg-green-800 hover:bg-green-900 text-white">
+              <Button className="bg-[#1F3D2B] hover:bg-[#2A553A] text-white">
                 See the Conversion System <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </a>
@@ -55,7 +55,7 @@ export default function B2CConversion() {
       </section>
 
       {/* The System */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">How the B2C System Works</h2>
           <p className="text-center text-gray-600 mb-12">Content drives traffic. Landing page converts. Automation follows up.</p>
@@ -81,7 +81,7 @@ export default function B2CConversion() {
             </div>
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10">
+          <div className="bg-[#EEF3EC] border border-[#6B8F71] rounded-xl p-6 mb-10">
             <h3 className="font-bold text-gray-900 mb-3">What If I'm Too Busy to Make Content?</h3>
             <p className="text-gray-700">You film once a week. 15 minutes. We give you the exact shots to capture. Post 2-3 times per week from that batch. Zero daily commitment.</p>
           </div>
@@ -136,7 +136,7 @@ export default function B2CConversion() {
       </section>
 
       {/* B2C Intake Form */}
-      <section id="b2c-form" className="py-16 bg-gray-50">
+      <section id="b2c-form" className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your B2C Audit</h2>
@@ -144,7 +144,7 @@ export default function B2CConversion() {
               Tell us about your current setup and we'll send you a conversion plan within 48 hours.
             </p>
           </div>
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
+          <div className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm">
             <B2CIntakeForm />
           </div>
         </div>

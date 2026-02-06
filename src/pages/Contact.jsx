@@ -102,7 +102,7 @@ ${cleanData.notes || 'None'}
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+      <section className="bg-gradient-to-b from-[#F7F3E8] to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Book a Strategy Call
@@ -116,7 +116,7 @@ ${cleanData.notes || 'None'}
       {/* Contact Info */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl border border-gray-200 p-8">
+          <div className="bg-white rounded-xl border border-[#E6E0D5] p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get In Touch</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
@@ -177,9 +177,9 @@ ${cleanData.notes || 'None'}
       </section>
 
       {/* Booking Form */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
+          <div className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Request a Strategy Call</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -259,7 +259,7 @@ ${cleanData.notes || 'None'}
                 />
               </div>
 
-              <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">
+              <Button type="submit" disabled={loading} className="w-full bg-[#1F3D2B] hover:bg-[#2A553A] text-white">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
