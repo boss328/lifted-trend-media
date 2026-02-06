@@ -9,17 +9,9 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="[VIDEO_URL]" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/60"></div>
+      <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#2A553A] to-[#1F3D2B]">
+        <div className="absolute inset-0 bg-black/45"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F7F3E8] to-transparent"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -29,7 +21,7 @@ export default function Home() {
             We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B and B2C—without you living on your phone.
           </p>
           <Link to={createPageUrl('FarmGrowthAudit')}>
-            <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:outline hover:outline-2 hover:outline-[#AED354] text-white text-lg px-8 py-6 font-semibold transition-all">
+            <Button size="lg" className="bg-[#1F3D2B] hover:bg-[#2A553A] text-white text-lg px-8 py-6 font-semibold transition-all">
               Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
@@ -51,20 +43,20 @@ export default function Home() {
       </section>
 
       {/* Problem */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">You're Losing Revenue in 3 Places</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8 text-center">You're Losing Revenue in 3 Places</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
-              <h3 className="font-bold text-gray-900 mb-2">Missed Inquiries</h3>
+            <div className="bg-white rounded-xl p-6 border-l-4 border-[#6B8F71] shadow-sm">
+              <h3 className="font-bold text-[#1A1A1A] mb-2">Missed Inquiries</h3>
               <p className="text-sm text-gray-700">DMs sit unanswered for 48 hours. By then, they bought elsewhere.</p>
             </div>
-            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
-              <h3 className="font-bold text-gray-900 mb-2">Buyer Ghosting</h3>
+            <div className="bg-white rounded-xl p-6 border-l-4 border-[#6B8F71] shadow-sm">
+              <h3 className="font-bold text-[#1A1A1A] mb-2">Buyer Ghosting</h3>
               <p className="text-sm text-gray-700">You answer questions. They say "sounds good." Then crickets. No follow-up system.</p>
             </div>
-            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
-              <h3 className="font-bold text-gray-900 mb-2">No Tracking</h3>
+            <div className="bg-white rounded-xl p-6 border-l-4 border-[#6B8F71] shadow-sm">
+              <h3 className="font-bold text-[#1A1A1A] mb-2">No Tracking</h3>
               <p className="text-sm text-gray-700">You don't know what's working. Wasting time on channels that don't convert.</p>
             </div>
           </div>
@@ -72,33 +64,33 @@ export default function Home() {
       </section>
 
       {/* Offer */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">What We Build</h2>
+            <h2 className="text-3xl font-bold text-[#1A1A1A] mb-3">What We Build</h2>
             <p className="text-lg text-gray-600">The complete system that turns your farm's story into revenue.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
-              <Target className="w-8 h-8 text-[#AED354] mb-4" />
-              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Website + SEO Foundation</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 hover:border-[#6B8F71] transition-colors shadow-sm">
+              <Target className="w-8 h-8 text-[#6B8F71] mb-4" />
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Website + SEO Foundation</h3>
               <p className="text-gray-700 mb-4">
                 Conversion-focused site built for farms (not a brochure). Local SEO setup, landing pages, tracking, and clear CTAs.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
-              <Package className="w-8 h-8 text-[#AED354] mb-4" />
-              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Lead Pipeline (B2B + B2C)</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 hover:border-[#6B8F71] transition-colors shadow-sm">
+              <Package className="w-8 h-8 text-[#6B8F71] mb-4" />
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Lead Pipeline (B2B + B2C)</h3>
               <p className="text-gray-700 mb-4">
                 Separate intake flows, auto-confirmations, and follow-up that runs. You only talk to qualified buyers/customers.
               </p>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6 hover:border-[#AED354] transition-colors">
-              <TrendingUp className="w-8 h-8 text-[#AED354] mb-4" />
-              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Video Content Engine</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 hover:border-[#6B8F71] transition-colors shadow-sm">
+              <TrendingUp className="w-8 h-8 text-[#6B8F71] mb-4" />
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Video Content Engine</h3>
               <p className="text-gray-700 mb-4">
                 Short-form storytelling that proves quality, harvest, and process. Designed to drive inquiries and orders—not just views.
               </p>
@@ -108,28 +100,28 @@ export default function Home() {
       </section>
 
       {/* Add-Ons */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Add-Ons (when you're ready)</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-3 text-center">Add-Ons (when you're ready)</h2>
           <p className="text-gray-600 mb-10 text-center">Scale after the foundation is live.</p>
           
           <div className="space-y-6">
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Video Content (Editing + Posting)</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Video Content (Editing + Posting)</h3>
               <p className="text-gray-700">
                 We turn your footage into consistent short-form content that converts.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">On-Location Filming + Directing</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">On-Location Filming + Directing</h3>
               <p className="text-gray-700">
                 Half-day / full-day shoot to capture harvest, packing, and story—done right.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Paid Ads (Google Search + Meta)</h3>
+            <div className="bg-white rounded-xl border border-[#E6E0D5] p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Paid Ads (Google Search + Meta)</h3>
               <p className="text-gray-700 mb-2">
                 Only after the foundation is live and tracking works. High-intent buyers, not cheap clicks.
               </p>
@@ -139,34 +131,34 @@ export default function Home() {
       </section>
 
       {/* SEO/Google */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Get Found on Google</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-3 text-center">Get Found on Google</h2>
           <p className="text-lg text-gray-600 mb-10 text-center">Where high-intent buyers already search</p>
           
-          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8 mb-6">
+          <div className="bg-white rounded-xl border border-[#E6E0D5] p-8 mb-6 shadow-sm">
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
                 <span><strong>Local rankings:</strong> "farm near me", "wholesale [product]", "[city] [product]"</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
                 <span><strong>Google Business Profile</strong> optimization + weekly updates</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
                 <span><strong>On-page SEO</strong> + landing pages by product + location</span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-[#AED354] mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
                 <span><strong>Tracking:</strong> calls, forms, direction clicks, and booked calls</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 mb-2">Optional: Google Shopping / Merchant Center</h3>
+          <div className="bg-[#EEF3EC] border border-[#6B8F71] rounded-xl p-6">
+            <h3 className="font-bold text-[#1A1A1A] mb-2">Optional: Google Shopping / Merchant Center</h3>
             <p className="text-sm text-gray-700">
               Best for farms selling shippable products (plants, cuttings, boxes, packaged goods). We set up the feed and listings so products show up when people search to buy.
             </p>
@@ -175,28 +167,28 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How It Works</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-12 text-center">How It Works</h2>
           <div className="space-y-8">
             <div className="flex items-start gap-6">
-              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+              <div className="bg-[#1F3D2B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
               <div>
-                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Diagnose (Week 1)</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Diagnose (Week 1)</h3>
                 <p className="text-gray-700">15-min audit call. We review your current setup, identify leaks, and map out what to build first. 2 hours of your time total for info gathering.</p>
               </div>
             </div>
             <div className="flex items-start gap-6">
-              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+              <div className="bg-[#1F3D2B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
               <div>
-                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Build (Weeks 2-4)</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Build (Weeks 2-4)</h3>
                 <p className="text-gray-700">We build: intake forms, landing pages, email automation, CRM pipeline, tracking. You focus on harvest. System launches in 30 days.</p>
               </div>
             </div>
             <div className="flex items-start gap-6">
-              <div className="bg-[#0B0B0B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+              <div className="bg-[#1F3D2B] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
               <div>
-                <h3 className="text-xl font-bold text-[#0B0B0B] mb-2">Optimize (Ongoing)</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">Optimize (Ongoing)</h3>
                 <p className="text-gray-700">Training + handoff. You own the system. Optional: we monitor performance and optimize monthly (Growth/Scale packages only).</p>
               </div>
             </div>
@@ -207,8 +199,8 @@ export default function Home() {
       {/* Investment */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Investment (ballpark)</h2>
-          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8">
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8 text-center">Investment (ballpark)</h2>
+          <div className="bg-[#F7F3E8] rounded-xl border border-[#E6E0D5] p-8">
             <p className="text-gray-700 mb-6">
               Most farms invest based on season timing, capacity, and how much you want us to handle.
             </p>
@@ -222,8 +214,8 @@ export default function Home() {
                 <span>Most clients choose a monthly system to run content + lead conversion</span>
               </li>
             </ul>
-            <div className="bg-[#F5F5F5] border-l-4 border-[#AED354] rounded-r-lg p-6">
-              <p className="font-semibold text-[#0B0B0B] mb-2">To get exact pricing:</p>
+            <div className="bg-white border-l-4 border-[#6B8F71] rounded-r-lg p-6 shadow-sm">
+              <p className="font-semibold text-[#1A1A1A] mb-2">To get exact pricing:</p>
               <p className="text-gray-700">
                 Submit the 60-second intake and we'll send the exact options that fit your operation.
               </p>
@@ -233,9 +225,9 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F7F3E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Common Questions</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8 text-center">Common Questions</h2>
           <div className="space-y-4">
             {[
               {
@@ -259,12 +251,12 @@ export default function Home() {
                 a: 'Maybe. We audit it first. If it has intake forms, automation, and tracking, we optimize. If not, rebuild is faster.'
               }
             ].map((faq, idx) => (
-              <details key={idx} className="bg-white rounded-lg p-6 border border-gray-200 group">
-                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+              <details key={idx} className="bg-white rounded-lg p-6 border border-[#E6E0D5] shadow-sm group">
+                <summary className="font-semibold text-[#1A1A1A] cursor-pointer list-none flex justify-between items-center">
                   <span>{faq.q}</span>
                   <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-[#AED354]">{faq.a}</p>
+                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-[#6B8F71]">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -272,19 +264,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-[#0B0B0B] text-white">
+      <section className="py-20 bg-[#1F3D2B] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Booking Side */}
             <div>
               <h2 className="text-3xl font-bold mb-4">Book a 15-Min Farm Growth Audit</h2>
-              <p className="text-gray-300 mb-6">We review your setup and show you exactly what to build first.</p>
+              <p className="text-gray-200 mb-6">We review your setup and show you exactly what to build first.</p>
               <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button size="lg" className="bg-white text-[#0B0B0B] hover:bg-gray-100 hover:outline hover:outline-2 hover:outline-[#AED354] w-full font-semibold transition-all">
+                <Button size="lg" className="bg-white text-[#1F3D2B] hover:bg-gray-100 w-full font-semibold transition-all">
                   Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <p className="text-sm text-gray-400 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
+              <p className="text-sm text-gray-300 mt-4">Or call: <a href="tel:8587520666" className="hover:text-white">858-752-0666</a> | Email: <a href="mailto:ahron@mydragonplug.com" className="hover:text-white">ahron@mydragonplug.com</a></p>
             </div>
 
             {/* Quick Intake Side */}
@@ -403,7 +395,7 @@ function QuickIntakeForm() {
         onChange={(e) => setFormData({...formData, season_start: e.target.value})}
         className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
       />
-      <Button type="submit" disabled={loading} className="w-full bg-white text-[#0B0B0B] hover:bg-gray-100 hover:outline hover:outline-2 hover:outline-[#AED354] font-semibold transition-all">
+      <Button type="submit" disabled={loading} className="w-full bg-white text-[#1F3D2B] hover:bg-gray-100 font-semibold transition-all">
         {loading ? 'Sending...' : 'Get Quote'}
       </Button>
     </form>
