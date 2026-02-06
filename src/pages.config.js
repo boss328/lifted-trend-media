@@ -47,38 +47,38 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
-import Home from './pages/Home';
-import Solutions from './pages/Solutions';
-import WholesaleGrowth from './pages/WholesaleGrowth';
-import B2CConversion from './pages/B2CConversion';
-import Process from './pages/Process';
 import About from './pages/About';
-import Contact from './pages/Contact';
-import Resources from './pages/Resources';
+import B2CConversion from './pages/B2CConversion';
 import CaseStudies from './pages/CaseStudies';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import ThankYouWholesale from './pages/ThankYouWholesale';
-import ThankYouB2C from './pages/ThankYouB2C';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
 import LeadsDashboard from './pages/LeadsDashboard';
+import Privacy from './pages/Privacy';
+import Process from './pages/Process';
+import Resources from './pages/Resources';
+import Solutions from './pages/Solutions';
+import Terms from './pages/Terms';
+import ThankYouB2C from './pages/ThankYouB2C';
+import ThankYouWholesale from './pages/ThankYouWholesale';
+import WholesaleGrowth from './pages/WholesaleGrowth';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "Home": Home,
-    "Solutions": Solutions,
-    "WholesaleGrowth": WholesaleGrowth,
-    "B2CConversion": B2CConversion,
-    "Process": Process,
     "About": About,
-    "Contact": Contact,
-    "Resources": Resources,
+    "B2CConversion": B2CConversion,
     "CaseStudies": CaseStudies,
-    "Privacy": Privacy,
-    "Terms": Terms,
-    "ThankYouWholesale": ThankYouWholesale,
-    "ThankYouB2C": ThankYouB2C,
+    "Contact": Contact,
+    "Home": Home,
     "LeadsDashboard": LeadsDashboard,
+    "Privacy": Privacy,
+    "Process": Process,
+    "Resources": Resources,
+    "Solutions": Solutions,
+    "Terms": Terms,
+    "ThankYouB2C": ThankYouB2C,
+    "ThankYouWholesale": ThankYouWholesale,
+    "WholesaleGrowth": WholesaleGrowth,
 }
 
 export const pagesConfig = {

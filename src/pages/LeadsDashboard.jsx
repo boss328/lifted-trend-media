@@ -16,6 +16,9 @@ export default function LeadsDashboard() {
   const [selectedLead, setSelectedLead] = useState(null);
   const [filterType, setFilterType] = useState('all');
   const [filterStage, setFilterStage] = useState('all');
+  const [filterScore, setFilterScore] = useState('all');
+  const [emailTemplate, setEmailTemplate] = useState('');
+  const [showEmailDialog, setShowEmailDialog] = useState(false);
 
   const { data: wholesaleLeads = [] } = useQuery({
     queryKey: ['wholesaleLeads'],
@@ -51,8 +54,72 @@ export default function LeadsDashboard() {
   const filteredLeads = allLeads.filter(lead => {
     if (filterType !== 'all' && lead.type !== filterType) return false;
     if (filterStage !== 'all' && lead.stage !== filterStage) return false;
+    if (filterScore !== 'all' && lead.score !== filterScore) return false;
     return true;
   });
+
+  const emailTemplates = {
+    wholesale: `Subject: Following up on your wholesale inquiry
+
+Hi [Contact Name],
+
+Thanks for filling out our wholesale intake form. I reviewed your information and wanted to follow up personally.
+
+Based on what you shared:
+• Target volume: [Volume]
+• Target buyers: [Buyer types]
+• Timeline: [Timeline]
+
+I'd like to schedule a quick 15-minute call to discuss pricing tiers and delivery options that fit your operation.
+
+Are you available [Day] or [Day] this week?
+
+Looking forward to connecting,
+[Your Name]`,
+    b2c: `Subject: Your B2C conversion audit is ready
+
+Hi [Contact Name],
+
+I reviewed your B2C audit submission and have some specific recommendations for [Business Name].
+
+Quick takeaways:
+• Biggest opportunity: [Specific leak they mentioned]
+• Quick win: [Actionable first step]
+• Timeline: [What can be done in 30/60/90 days]
+
+Would you be open to a 20-minute call to walk through the plan?
+
+Let me know what works for your schedule.
+
+Best,
+[Your Name]`,
+    notfit: `Subject: Re: Your inquiry
+
+Hi [Contact Name],
+
+Thanks for reaching out and sharing details about [Business Name].
+
+After reviewing your situation, I don't think we're the right fit right now. Here's why:
+
+[Specific reason - e.g., "Your current volume is under our minimum threshold" or "You need X before building a pipeline"]
+
+What I'd recommend instead:
+[Specific actionable advice or referral]
+
+Feel free to reach back out in [timeframe] once [milestone].
+
+All the best,
+[Your Name]`
+  };
+
+  const getScoreColor = (score) => {
+    const colors = {
+      'Hot': 'bg-red-100 text-red-800',
+      'Warm': 'bg-yellow-100 text-yellow-800',
+      'Cold': 'bg-blue-100 text-blue-800'
+    };
+    return colors[score] || 'bg-gray-100 text-gray-800';
+  };
 
   const stages = ['New', 'Qualified', 'Call Booked', 'Proposal Sent', 'Negotiation', 'Won', 'Lost'];
 
@@ -121,7 +188,7 @@ export default function LeadsDashboard() {
 
         {/* Filters */}
         <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             <Filter className="w-5 h-5 text-gray-600" />
             <Select value={filterType} onValueChange={setFilterType}>
               <SelectTrigger className="w-40">
@@ -145,6 +212,17 @@ export default function LeadsDashboard() {
                 ))}
               </SelectContent>
             </Select>
+            <Select value={filterScore} onValueChange={setFilterScore}>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="Score" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Scores</SelectItem>
+                <SelectItem value="Hot">🔥 Hot</SelectItem>
+                <SelectItem value="Warm">☀️ Warm</SelectItem>
+                <SelectItem value="Cold">❄️ Cold</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
 
@@ -165,16 +243,24 @@ export default function LeadsDashboard() {
                       <Dialog key={lead.id}>
                         <DialogTrigger asChild>
                           <div
-                            onClick={() => setSelectedLead(lead)}
-                            className="bg-white rounded-lg p-3 border border-gray-200 cursor-pointer hover:shadow-md transition-shadow"
+                           onClick={() => setSelectedLead(lead)}
+                           className="bg-white rounded-lg p-3 border border-gray-200 cursor-pointer hover:shadow-md transition-shadow"
                           >
-                            <div className="flex items-center justify-between mb-2">
-                              <Badge className="text-xs">{lead.type}</Badge>
-                            </div>
-                            <h4 className="font-semibold text-sm text-gray-900 mb-1">
-                              {lead.business_name || lead.name || lead.business}
-                            </h4>
-                            <p className="text-xs text-gray-600">{lead.email}</p>
+                           <div className="flex items-center justify-between mb-2">
+                             <Badge className="text-xs">{lead.type}</Badge>
+                             {lead.score && (
+                               <Badge className={`text-xs ${getScoreColor(lead.score)}`}>
+                                 {lead.score === 'Hot' ? '🔥' : lead.score === 'Warm' ? '☀️' : '❄️'}
+                               </Badge>
+                             )}
+                           </div>
+                           <h4 className="font-semibold text-sm text-gray-900 mb-1">
+                             {lead.business_name || lead.name || lead.business}
+                           </h4>
+                           <p className="text-xs text-gray-600">{lead.email}</p>
+                           {lead.source && (
+                             <p className="text-xs text-gray-500 mt-1">Source: {lead.source}</p>
+                           )}
                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -199,30 +285,100 @@ export default function LeadsDashboard() {
                                   <span className="font-semibold">Location:</span> {lead.location}
                                 </div>
                               )}
+                              {lead.source && (
+                                <div>
+                                  <span className="font-semibold">Source:</span> {lead.source}
+                                </div>
+                              )}
                             </div>
 
-                            <div>
-                              <label className="text-sm font-semibold block mb-2">Stage</label>
-                              <Select
-                                value={lead.stage}
-                                onValueChange={(newStage) => {
-                                  if (lead.type === 'Wholesale') {
-                                    updateWholesaleLead.mutate({ id: lead.id, data: { stage: newStage } });
-                                  } else if (lead.type === 'B2C') {
-                                    updateB2CLead.mutate({ id: lead.id, data: { stage: newStage } });
-                                  }
-                                }}
-                              >
-                                <SelectTrigger>
-                                  <SelectValue />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  {stages.map(s => (
-                                    <SelectItem key={s} value={s}>{s}</SelectItem>
-                                  ))}
-                                </SelectContent>
-                              </Select>
+                            <div className="grid md:grid-cols-2 gap-4">
+                              <div>
+                                <label className="text-sm font-semibold block mb-2">Stage</label>
+                                <Select
+                                  value={lead.stage}
+                                  onValueChange={(newStage) => {
+                                    if (lead.type === 'Wholesale') {
+                                      updateWholesaleLead.mutate({ id: lead.id, data: { stage: newStage } });
+                                    } else if (lead.type === 'B2C') {
+                                      updateB2CLead.mutate({ id: lead.id, data: { stage: newStage } });
+                                    }
+                                  }}
+                                >
+                                  <SelectTrigger>
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    {stages.map(s => (
+                                      <SelectItem key={s} value={s}>{s}</SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                              </div>
+
+                              {lead.score !== undefined && (
+                                <div>
+                                  <label className="text-sm font-semibold block mb-2">Score</label>
+                                  <Select
+                                    value={lead.score || 'Warm'}
+                                    onValueChange={(newScore) => {
+                                      if (lead.type === 'Wholesale') {
+                                        updateWholesaleLead.mutate({ id: lead.id, data: { score: newScore } });
+                                      } else if (lead.type === 'B2C') {
+                                        updateB2CLead.mutate({ id: lead.id, data: { score: newScore } });
+                                      }
+                                    }}
+                                  >
+                                    <SelectTrigger>
+                                      <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                      <SelectItem value="Hot">🔥 Hot</SelectItem>
+                                      <SelectItem value="Warm">☀️ Warm</SelectItem>
+                                      <SelectItem value="Cold">❄️ Cold</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                </div>
+                              )}
                             </div>
+
+                            {(lead.type === 'Wholesale' || lead.type === 'B2C') && (
+                              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                <label className="text-sm font-semibold block mb-3">Email Templates</label>
+                                <div className="flex gap-2">
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                      setEmailTemplate(emailTemplates.wholesale);
+                                      setShowEmailDialog(true);
+                                    }}
+                                  >
+                                    Wholesale Follow-up
+                                  </Button>
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                      setEmailTemplate(emailTemplates.b2c);
+                                      setShowEmailDialog(true);
+                                    }}
+                                  >
+                                    B2C Follow-up
+                                  </Button>
+                                  <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                      setEmailTemplate(emailTemplates.notfit);
+                                      setShowEmailDialog(true);
+                                    }}
+                                  >
+                                    Not a Fit
+                                  </Button>
+                                </div>
+                              </div>
+                            )}
 
                             {lead.notes !== undefined && (
                               <div>
@@ -265,6 +421,8 @@ export default function LeadsDashboard() {
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Type</th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Business</th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Email</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Score</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Source</th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Stage</th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600">Date</th>
                   </tr>
@@ -278,6 +436,18 @@ export default function LeadsDashboard() {
                       <td className="px-4 py-3 text-sm">{lead.business_name || lead.name || lead.business}</td>
                       <td className="px-4 py-3 text-sm">{lead.email}</td>
                       <td className="px-4 py-3">
+                        {lead.score ? (
+                          <Badge className={getScoreColor(lead.score)}>
+                            {lead.score === 'Hot' ? '🔥' : lead.score === 'Warm' ? '☀️' : '❄️'} {lead.score}
+                          </Badge>
+                        ) : (
+                          <span className="text-xs text-gray-400">—</span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3 text-sm text-gray-600">
+                        {lead.source || '—'}
+                      </td>
+                      <td className="px-4 py-3">
                         <Badge className={getStageColor(lead.stage)}>{lead.stage}</Badge>
                       </td>
                       <td className="px-4 py-3 text-sm text-gray-600">
@@ -290,6 +460,36 @@ export default function LeadsDashboard() {
             </div>
           </TabsContent>
         </Tabs>
+
+        {/* Email Template Dialog */}
+        <Dialog open={showEmailDialog} onOpenChange={setShowEmailDialog}>
+          <DialogContent className="max-w-3xl">
+            <DialogHeader>
+              <DialogTitle>Email Template</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <Textarea
+                value={emailTemplate}
+                onChange={(e) => setEmailTemplate(e.target.value)}
+                rows={15}
+                className="font-mono text-sm"
+              />
+              <div className="flex justify-end gap-3">
+                <Button variant="outline" onClick={() => setShowEmailDialog(false)}>
+                  Close
+                </Button>
+                <Button
+                  onClick={() => {
+                    navigator.clipboard.writeText(emailTemplate);
+                    alert('Template copied to clipboard!');
+                  }}
+                >
+                  Copy to Clipboard
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
