@@ -29,12 +29,8 @@ export default function Layout({ children, currentPageName }) {
       <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to={createPageUrl('Home')} className="flex items-center">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/436b55471_unnamed.jpg" 
-                alt="Lifted Trend Media" 
-                className="h-10 w-auto"
-              />
+            <Link to={createPageUrl('Home')} className="text-2xl font-bold text-gray-900">
+              [LOGO] Lifted Trend Media
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
