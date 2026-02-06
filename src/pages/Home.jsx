@@ -96,8 +96,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEO/Google */}
+      {/* Add-Ons */}
       <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Add-Ons (when you're ready)</h2>
+          <p className="text-gray-600 mb-10 text-center">Scale after the foundation is live.</p>
+          
+          <div className="space-y-6">
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Video Content (Editing + Posting)</h3>
+              <p className="text-gray-700">
+                We turn your footage into consistent short-form content that converts.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">On-Location Filming + Directing</h3>
+              <p className="text-gray-700">
+                Half-day / full-day shoot to capture harvest, packing, and story—done right.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Paid Ads (Google Search + Meta)</h3>
+              <p className="text-gray-700 mb-2">
+                Only after the foundation is live and tracking works. High-intent buyers, not cheap clicks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO/Google */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Get Found on Google</h2>
           <p className="text-lg text-gray-600 mb-10 text-center">Where high-intent buyers already search</p>
