@@ -2,477 +2,384 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Users, TrendingUp, Clock, Target, X } from 'lucide-react';
+import { ArrowRight, CheckCircle, Package, TrendingUp, Target } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import NotAFitSection from '../components/conversion/NotAFitSection';
-import FitCheckSection from '../components/conversion/FitCheckSection';
-import NinetyDayRoadmap from '../components/conversion/NinetyDayRoadmap';
-import RiskReversalSection from '../components/conversion/RiskReversalSection';
-import ROIFraming from '../components/conversion/ROIFraming';
-import ScopeControlWall from '../components/conversion/ScopeControlWall';
-import ClosingFAQ from '../components/conversion/ClosingFAQ';
-import PackagesSection from '../components/conversion/PackagesSection';
 
 export default function Home() {
-  const trackEvent = (eventName) => {
-    base44.analytics.track({ eventName, properties: { page: 'home' } });
-  };
-
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-green-50 to-white py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Stop answering the same questions.<br />Start closing qualified buyers.
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Automated intake forms. Buyer qualification. Follow-up that runs itself. Track what converts. You focus on harvest.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl('Contact')} onClick={() => trackEvent('hero_book_call_click')}>
-                <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white w-full sm:w-auto">
-                  Book 30-Min Call <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link to={createPageUrl('Contact')} onClick={() => trackEvent('hero_get_plan_click')}>
-                <Button size="lg" variant="outline" className="border-2 border-green-800 text-green-800 hover:bg-green-50 w-full sm:w-auto">
-                  See Pricing
-                </Button>
-              </Link>
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-green-50 to-white py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            Stop Losing Orders to DMs and Email Chaos
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-600 mb-8">
+            We build buyer pipelines for farms, ranches, and nurseries. Intake forms qualify leads. Automation handles follow-up. You close deals.
+          </p>
+          <Link to={createPageUrl('FarmGrowthAudit')}>
+            <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white text-lg px-8 py-6">
+              Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
+          <div className="mt-12 grid md:grid-cols-3 gap-6 text-left">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-700"><strong>Systems-first:</strong> Not branding or content. We build pipelines that work without you.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-700"><strong>Ag-first:</strong> Built for seasonality, capacity limits, and wholesale logistics.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
+              <p className="text-sm text-gray-700"><strong>Tracked results:</strong> Every form, email, and conversion is measured.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Problem */}
+      {/* Problem */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">You're Losing Sales Every Week</h2>
-          <p className="text-center text-gray-600 mb-12">Most farms lose buyers because the system breaks down before the sale closes.</p>
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
-            {[
-              "Inquiries come in through 5 different channels. You miss half of them.",
-              "Buyer asks about volume, pricing, delivery. You answer. They ghost.",
-              "Peak season hits. You're too busy to follow up. Sales die.",
-              "You post content. Views go up. Orders don't. No tracking to prove what works."
-            ].map((problem, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700 font-medium">{problem}</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">You're Losing Revenue in 3 Places</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
+              <h3 className="font-bold text-gray-900 mb-2">Missed Inquiries</h3>
+              <p className="text-sm text-gray-700">DMs sit unanswered for 48 hours. By then, they bought elsewhere.</p>
+            </div>
+            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
+              <h3 className="font-bold text-gray-900 mb-2">Buyer Ghosting</h3>
+              <p className="text-sm text-gray-700">You answer questions. They say "sounds good." Then crickets. No follow-up system.</p>
+            </div>
+            <div className="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
+              <h3 className="font-bold text-gray-900 mb-2">No Tracking</h3>
+              <p className="text-sm text-gray-700">You don't know what's working. Wasting time on channels that don't convert.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Offer */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">The Foundation System</h2>
+            <p className="text-lg text-gray-600">Site + Forms + Automation + Tracking. Built in 30 days.</p>
+          </div>
+
+          <div className="bg-white rounded-xl border-2 border-green-800 p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">What You Get:</h3>
+            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>Intake forms with auto-qualification</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>Landing pages (wholesale kit or product page)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>CRM pipeline with lead stages</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>Email automation (confirmation + follow-up)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>Performance tracking setup</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
+                <span>Training + handoff</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
+              <Package className="w-8 h-8 text-green-800 mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">+ Wholesale Growth</h3>
+              <p className="text-sm text-gray-600 mb-3">Add: wholesale kit, buyer qualification logic, volume-based pricing display.</p>
+              <p className="text-xs text-gray-500">Best for: farms selling to restaurants, grocers, distributors.</p>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
+              <TrendingUp className="w-8 h-8 text-blue-800 mb-3" />
+              <h3 className="font-bold text-gray-900 mb-2">+ B2C Conversion</h3>
+              <p className="text-sm text-gray-600 mb-3">Add: preorder forms, waitlist automation, content templates, drop scheduling.</p>
+              <p className="text-xs text-gray-500">Best for: farms selling direct via social, CSA, or U-pick.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What We Ship</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-3">Organic Citrus Farm, Central Valley</h3>
+              <p className="text-sm text-gray-700 mb-4">
+                Before: 15 hours/week answering wholesale inquiries manually. After: intake form filters unqualified buyers. Only talks to decision-makers.
+              </p>
+              <div className="bg-green-100 rounded-lg p-3">
+                <p className="text-sm font-semibold text-green-900">Result: 3 new wholesale accounts in 60 days. 10 hrs/week saved.</p>
               </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link to={createPageUrl('Contact')}>
-              <Button className="bg-green-800 hover:bg-green-900 text-white">
-                Fix This in 30 Days <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-3">Rare Plant Nursery, LA</h3>
+              <p className="text-sm text-gray-700 mb-4">
+                Before: Posted drops on Instagram. 200 DMs per drop. Lost 40% of orders in chaos. After: preorder form + waitlist automation.
+              </p>
+              <div className="bg-green-100 rounded-lg p-3">
+                <p className="text-sm font-semibold text-green-900">Result: 47 preorders in 72 hours. Waitlist captured 80 more.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What You Get */}
+      {/* How It Works */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What You Actually Get</h2>
-          <p className="text-center text-gray-600 mb-12">Not theory. Not templates. A system that runs without you.</p>
-          <div className="grid md:grid-cols-2 gap-12 mb-10">
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Wholesale (B2B)</h3>
-              <ul className="space-y-4 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Intake form qualifies buyers automatically</span>
-                    <p className="text-sm text-gray-600 mt-1">Volume, frequency, delivery, pricing tier—answered before you pick up the phone</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Wholesale kit sends itself</span>
-                    <p className="text-sm text-gray-600 mt-1">Line sheets, pricing, terms—delivered automatically when they submit</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Follow-up reminders built in</span>
-                    <p className="text-sm text-gray-600 mt-1">Never forget to close a deal. System reminds you when to follow up</p>
-                  </div>
-                </li>
-              </ul>
-              <Link to={createPageUrl('WholesaleGrowth')}>
-                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
-                  See Wholesale System <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">For Direct Sales (B2C)</h3>
-              <ul className="space-y-4 mb-6">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Landing page converts inquiries</span>
-                    <p className="text-sm text-gray-600 mt-1">Preorder form, pickup scheduler, waitlist—ready to capture orders</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Content system you can actually do</span>
-                    <p className="text-sm text-gray-600 mt-1">Phone-filmable shot list. Post schedule. Hooks that drive orders, not likes</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <span className="text-gray-900 font-semibold">Know what converts</span>
-                    <p className="text-sm text-gray-600 mt-1">Track orders back to content. Stop guessing what works</p>
-                  </div>
-                </li>
-              </ul>
-              <Link to={createPageUrl('B2CConversion')}>
-                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
-                  See B2C System <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fit Check */}
-      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Are You a Fit?</h2>
-          <div className="space-y-6">
-            <FitCheckSection />
-            <NotAFitSection />
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How It Works</h2>
+          <div className="space-y-8">
+            <div className="flex items-start gap-6">
+              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Diagnose (Week 1)</h3>
+                <p className="text-gray-700">15-min audit call. We review your current setup, identify leaks, and map out what to build first. 2 hours of your time total for info gathering.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-6">
+              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Build (Weeks 2-4)</h3>
+                <p className="text-gray-700">We build: intake forms, landing pages, email automation, CRM pipeline, tracking. You focus on harvest. System launches in 30 days.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-6">
+              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Optimize (Ongoing)</h3>
+                <p className="text-gray-700">Training + handoff. You own the system. Optional: we monitor performance and optimize monthly (Growth/Scale packages only).</p>
+              </div>
+            </div>
           </div>
-          <div className="text-center mt-8">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Find Out If We Can Help <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 90-Day Roadmap */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <NinetyDayRoadmap />
-          <div className="text-center mt-10">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Start Week 1 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ROI Framing */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ROIFraming />
-        </div>
-      </section>
-
-      {/* Risk Reversal */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RiskReversalSection />
-          <div className="text-center mt-8">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Lock In Your Guarantee <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Scope Control */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScopeControlWall />
         </div>
       </section>
 
       {/* Pricing Anchor */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Three Ways to Work With Us</h2>
-          <p className="text-center text-gray-600 mb-12">Pick the system that matches your capacity and growth stage.</p>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
-            {/* Foundation Package */}
-            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Foundation</h3>
-              <p className="text-gray-600 mb-6">The buyer pipeline. Everything you need to qualify and close.</p>
-              
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Website (5 pages)</li>
-                  <li>• Intake form + qualification logic</li>
-                  <li>• Email automation</li>
-                  <li>• CRM pipeline setup</li>
-                  <li>• Conversion tracking</li>
-                  <li>• 30-day build timeline</li>
-                </ul>
-              </div>
-              
-              <div className="pt-6 border-t border-gray-200">
-                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
-                <p className="text-sm text-gray-600">Farms with 0-3 wholesale accounts OR direct sales under $5K/month. Need the system, not the marketing.</p>
-              </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Pricing</h2>
+          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8">
+            <div className="text-center mb-6">
+              <div className="text-4xl font-bold text-gray-900 mb-2">$8K–$15K</div>
+              <p className="text-gray-600">Foundation System (one-time build fee)</p>
             </div>
-
-            {/* Growth Package */}
-            <div className="bg-green-50 rounded-xl border-2 border-green-800 p-8 relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-green-800 text-white text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Growth</h3>
-              <p className="text-gray-600 mb-6">Foundation + content system to drive consistent orders.</p>
-              
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Everything in Foundation</li>
-                  <li>• Content strategy + shot list</li>
-                  <li>• Posting schedule (90 days)</li>
-                  <li>• Hook templates</li>
-                  <li>• Performance tracking</li>
-                  <li>• 45-day build timeline</li>
-                </ul>
-              </div>
-              
-              <div className="pt-6 border-t border-gray-300">
-                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
-                <p className="text-sm text-gray-600">Farms ready to scale from 3 to 10+ accounts OR B2C brands doing $5K-$20K/month. Need pipeline + traffic.</p>
-              </div>
-            </div>
-
-            {/* Scale Package */}
-            <div className="bg-white rounded-xl border-2 border-gray-200 p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Scale</h3>
-              <p className="text-gray-600 mb-6">Growth + paid ads to multiply qualified leads.</p>
-              
-              <div className="mb-6">
-                <div className="text-sm font-semibold text-gray-700 mb-3">INCLUDES:</div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Everything in Growth</li>
-                  <li>• Google Ads setup</li>
-                  <li>• Meta Ads (IG/FB)</li>
-                  <li>• Landing page optimization</li>
-                  <li>• Monthly performance reports</li>
-                  <li>• 60-day build + launch</li>
-                </ul>
-              </div>
-              
-              <div className="pt-6 border-t border-gray-200">
-                <div className="text-sm font-semibold text-gray-700 mb-2">WHO IT'S FOR:</div>
-                <p className="text-sm text-gray-600">Established farms with proven product-market fit. Ready to spend on ads to reach more buyers faster.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 rounded-xl p-8 border border-gray-200 mb-6">
-            <h3 className="font-bold text-gray-900 mb-4">Scope Boundaries</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-sm">
+            <div className="space-y-4 mb-6">
               <div>
-                <p className="font-semibold text-gray-900 mb-2">✓ INCLUDED:</p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Up to 2 revision rounds per deliverable</li>
-                  <li>• Standard form fields + automations</li>
-                  <li>• Basic CRM setup (stages + notifications)</li>
-                  <li>• Standard integrations (email, calendar, payment)</li>
-                  <li>• Training session + documentation</li>
+                <h4 className="font-semibold text-gray-900 mb-2">What affects price:</h4>
+                <ul className="space-y-1 text-sm text-gray-700">
+                  <li>• Complexity (single product vs. 50+ SKUs)</li>
+                  <li>• Channels (B2B only vs. B2B + B2C + CSA + U-pick)</li>
+                  <li>• Integrations (payment processing, scheduling, inventory sync)</li>
                 </ul>
               </div>
               <div>
-                <p className="font-semibold text-gray-900 mb-2">✗ NOT INCLUDED:</p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Unlimited revisions</li>
-                  <li>• Custom software development</li>
-                  <li>• Ongoing content creation (post-launch)</li>
-                  <li>• Ad spend budget (client pays directly)</li>
-                  <li>• Phone/email support after handoff</li>
+                <h4 className="font-semibold text-gray-900 mb-2">Add-ons:</h4>
+                <ul className="space-y-1 text-sm text-gray-700">
+                  <li>• Wholesale Growth: +$3K–$5K</li>
+                  <li>• B2C Conversion: +$3K–$5K</li>
+                  <li>• Ongoing optimization: $1.5K–$3K/month (optional)</li>
                 </ul>
               </div>
             </div>
-          </div>
-
-          <div className="bg-green-800 text-white rounded-xl p-6 text-center">
-            <p className="text-lg font-semibold mb-2">Minimum Engagement: Foundation Package</p>
-            <p className="text-green-100 text-sm">All projects start with Foundation. Add Growth or Scale based on your capacity and goals. Typical investment: $3,500–$15,000 depending on package and customization.</p>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Book Call to Discuss Pricing <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+            <div className="bg-yellow-50 border-l-4 border-yellow-600 rounded-r-lg p-4">
+              <p className="text-sm text-gray-900"><strong>Minimum engagement:</strong> Foundation System (30 days). Growth/Scale require 2-3 month minimum for optimization cycles.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Objections */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">"But I Don't Have Time for This"</h2>
-          <div className="space-y-6 mb-10">
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <p className="font-bold text-gray-900 mb-2">"Harvest season is 6 weeks. I can't pause to build a website."</p>
-              <p className="text-gray-700">We build it while you harvest. You give us product info + photos once. We handle the rest. Launch in 30 days or we refund you.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <p className="font-bold text-gray-900 mb-2">"I already have 3 buyers. Why do I need a system?"</p>
-              <p className="text-gray-700">Those 3 buyers took you months to find. The system finds the next 3 in weeks—while you're working the field, not chasing leads.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <p className="font-bold text-gray-900 mb-2">"What if I can't fulfill the orders?"</p>
-              <p className="text-gray-700">We build capacity limits into your intake form. Buyers only see what you can deliver. No overselling. No chaos.</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <p className="font-bold text-gray-900 mb-2">"I'm not a marketer. I don't know what content to make."</p>
-              <p className="text-gray-700">We give you the exact shot list. Film on your phone. 2-minute videos. Post once a week. No guessing.</p>
-            </div>
-          </div>
-          <div className="text-center">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Talk Through Your Situation <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">30-Day Build. Lifetime Ownership.</h2>
-          <p className="text-center text-gray-600 mb-12">No monthly fees after launch. You own everything.</p>
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-green-800 font-bold text-sm mb-2">WEEK 1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Information Gathering</h3>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Product list + pricing</li>
-                <li>• Photos/videos you already have</li>
-                <li>• Capacity + delivery zones</li>
-                <li>• 1 hour total of your time</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-green-800 font-bold text-sm mb-2">WEEKS 2-3</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">We Build Everything</h3>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Website goes live</li>
-                <li>• Forms + automation working</li>
-                <li>• Tracking installed</li>
-                <li>• Zero hours from you</li>
-              </ul>
-            </div>
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-green-800 font-bold text-sm mb-2">WEEK 4</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">You Take Over</h3>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Training call (30 min)</li>
-                <li>• All logins transferred</li>
-                <li>• Content shot list delivered</li>
-                <li>• System starts working</li>
-              </ul>
-            </div>
-          </div>
-          <div className="text-center">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Start in 7 Days <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Results */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Real Farms. Real Numbers.</h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <div className="text-3xl font-bold text-green-800 mb-2">10 hrs/week saved</div>
-              <p className="text-gray-700 mb-4">"Intake form filters out tire-kickers. I only talk to buyers ready to place orders."</p>
-              <p className="text-sm text-gray-600">— Organic citrus, 40 acres</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <div className="text-3xl font-bold text-green-800 mb-2">3 new accounts in 60 days</div>
-              <p className="text-gray-700 mb-4">"System brought qualified restaurant buyers. No cold calling. No chasing."</p>
-              <p className="text-sm text-gray-600">— Mixed vegetable farm, Ventura County</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <div className="text-3xl font-bold text-green-800 mb-2">47 preorders in 72 hours</div>
-              <p className="text-gray-700 mb-4">"First drop sold out. Waitlist system captured 80+ for next round."</p>
-              <p className="text-sm text-gray-600">— Rare plant nursery, LA</p>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-green-800">
-              <div className="text-3xl font-bold text-green-800 mb-2">$0 wasted ad spend</div>
-              <p className="text-gray-700 mb-4">"Built the system first. Now we know exactly what converts before spending a dollar on ads."</p>
-              <p className="text-sm text-gray-600">— Heritage pork ranch, San Diego</p>
-            </div>
-          </div>
-          <div className="text-center">
-            <Link to={createPageUrl('CaseStudies')}>
-              <Button className="bg-green-800 hover:bg-green-900 text-white">
-                Read Full Case Studies <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Closing FAQ */}
+      {/* FAQ */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ClosingFAQ />
-          <div className="text-center mt-10">
-            <Link to={createPageUrl('Contact')}>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-                Still Have Questions? Ask Us <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Common Questions</h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'My season starts in 4 weeks. Can you build it in time?',
+                a: 'If you provide all info within 3 days, yes. Otherwise, we build it for next season. Rushing guarantees mistakes.'
+              },
+              {
+                q: 'What if I get more orders than I can handle?',
+                a: 'We cap your forms at your capacity. When you hit the limit, new orders join the waitlist. No overselling.'
+              },
+              {
+                q: 'Do I own this or pay monthly forever?',
+                a: 'You own it. One-time build fee. Optional monthly support for ongoing optimization (Growth/Scale only).'
+              },
+              {
+                q: 'What if you build it and no leads come in?',
+                a: '90-day performance extension. We optimize for free until you get qualified leads. But you must drive traffic per our plan.'
+              },
+              {
+                q: 'I already have a website. Do I need to rebuild?',
+                a: 'Maybe. We audit it first. If it has intake forms, automation, and tracking, we optimize. If not, rebuild is faster.'
+              }
+            ].map((faq, idx) => (
+              <details key={idx} className="bg-white rounded-lg p-6 border border-gray-200 group">
+                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                  <span>{faq.q}</span>
+                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-green-800">{faq.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="py-20 bg-green-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Stop Losing Buyers. Start Closing Deals.
-          </h2>
-          <p className="text-xl text-green-100 mb-8">
-            30-minute call. We'll tell you exactly what to build and how long it takes. No pitch. Just a plan.
-          </p>
-          <Link to={createPageUrl('Contact')} onClick={() => trackEvent('footer_cta_click')}>
-            <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100">
-              Book 30-Min Call (Free) <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Booking Side */}
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Book Your Audit Call</h2>
+              <p className="text-green-100 mb-6">15 minutes. We review your setup and show you exactly what to build first.</p>
+              <Link to={createPageUrl('FarmGrowthAudit')}>
+                <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 w-full">
+                  Book 15-Min Audit <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <p className="text-sm text-green-100 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
+            </div>
+
+            {/* Quick Intake Side */}
+            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
+              <h3 className="text-xl font-bold mb-4">Or Get a Quote</h3>
+              <QuickIntakeForm />
+            </div>
+          </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function QuickIntakeForm() {
+  const [submitted, setSubmitted] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [formData, setFormData] = React.useState({
+    name: '',
+    farm: '',
+    email: '',
+    phone: '',
+    goal: '',
+    capacity: '',
+    season_start: ''
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await base44.entities.WholesaleLead.create({
+        business_name: formData.farm,
+        contact_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        success_90_days: formData.goal,
+        weekly_volume_capacity: formData.capacity,
+        season_start_date: formData.season_start,
+        source: 'Homepage Quick Form',
+        stage: 'New',
+        score: 'Warm'
+      });
+      setSubmitted(true);
+    } catch (error) {
+      alert('Error submitting. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="text-center py-8">
+        <CheckCircle className="w-12 h-12 text-green-300 mx-auto mb-3" />
+        <p className="text-white font-semibold">Thanks! We'll send you a quote within 24 hours.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <input
+        type="text"
+        placeholder="Your Name *"
+        required
+        value={formData.name}
+        onChange={(e) => setFormData({...formData, name: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
+      <input
+        type="text"
+        placeholder="Farm/Business Name *"
+        required
+        value={formData.farm}
+        onChange={(e) => setFormData({...formData, farm: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
+      <input
+        type="email"
+        placeholder="Email *"
+        required
+        value={formData.email}
+        onChange={(e) => setFormData({...formData, email: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
+      <input
+        type="tel"
+        placeholder="Phone"
+        value={formData.phone}
+        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
+      <select
+        required
+        value={formData.goal}
+        onChange={(e) => setFormData({...formData, goal: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+      >
+        <option value="">Goal *</option>
+        <option value="Wholesale Growth">Wholesale Growth</option>
+        <option value="B2C Conversion">B2C Conversion</option>
+        <option value="Both">Both</option>
+      </select>
+      <input
+        type="text"
+        placeholder="Weekly Capacity (optional)"
+        value={formData.capacity}
+        onChange={(e) => setFormData({...formData, capacity: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
+      <input
+        type="date"
+        placeholder="Season Start Date"
+        value={formData.season_start}
+        onChange={(e) => setFormData({...formData, season_start: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+      />
+      <Button type="submit" disabled={loading} className="w-full bg-white text-green-800 hover:bg-gray-100">
+        {loading ? 'Sending...' : 'Get Quote'}
+      </Button>
+    </form>
   );
 }
