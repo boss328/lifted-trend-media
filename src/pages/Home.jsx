@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Package, TrendingUp, Target } from 'lucide-react';
+import { ArrowRight, CheckCircle, Package, TrendingUp, Target, Globe, Users, Video, Film, Camera, Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
             We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B and B2C—without you living on your phone.
           </p>
           <Link to={createPageUrl('FarmGrowthAudit')}>
-            <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white text-lg px-8 py-6">
+            <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:ring-2 hover:ring-[#AED354] text-white text-lg px-8 py-6 transition-all">
               Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
@@ -71,135 +71,125 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Offer */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">What We Build</h2>
-            <p className="text-lg text-gray-600">The complete system that turns your farm's story into revenue.</p>
-          </div>
-
+      {/* What We Build */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-4 text-center">What We Build</h2>
+          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            Three systems working together: site, pipeline, and content.
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <Target className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Website + SEO Foundation</h3>
-              <p className="text-gray-700 mb-4">
-                Conversion-focused site built for farms (not a brochure). Local SEO setup, landing pages, tracking, and clear CTAs.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <Package className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Lead Pipeline (B2B + B2C)</h3>
-              <p className="text-gray-700 mb-4">
-                Separate intake flows, auto-confirmations, and follow-up that runs. You only talk to qualified buyers/customers.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <TrendingUp className="w-8 h-8 text-green-800 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Video Content Engine</h3>
-              <p className="text-gray-700 mb-4">
-                Short-form storytelling that proves quality, harvest, and process. Designed to drive inquiries and orders—not just views.
-              </p>
-            </div>
+            {[
+              {
+                icon: Globe,
+                title: 'Website + SEO Foundation',
+                description: 'Fast-loading site built for local search. Google Business Profile optimized. Shows up when buyers search "organic strawberries near me" or "wholesale produce supplier [city]".'
+              },
+              {
+                icon: Users,
+                title: 'Lead Pipeline (B2B + B2C)',
+                description: 'Intake forms that qualify buyers automatically. B2B buyers get wholesale info kits. B2C orders route to fulfillment. Email follow-up sequences for both.'
+              },
+              {
+                icon: Video,
+                title: 'Video Content Engine',
+                description: 'Short-form content from your farm operations. Planned shot lists, edited clips, posted to Instagram/TikTok/YouTube. Shows your process = builds trust.'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-[#F5F5F5] rounded-xl p-8 border border-gray-200 hover:border-[#AED354] transition-all">
+                <div className="w-12 h-12 bg-[#0B0B0B] rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">{item.title}</h3>
+                <p className="text-[#6B7280]">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Add-Ons */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Add-Ons (when you're ready)</h2>
-          <p className="text-gray-600 mb-10 text-center">Scale after the foundation is live.</p>
-          
-          <div className="space-y-6">
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Video Content (Editing + Posting)</h3>
-              <p className="text-gray-700">
-                We turn your footage into consistent short-form content that converts.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">On-Location Filming + Directing</h3>
-              <p className="text-gray-700">
-                Half-day / full-day shoot to capture harvest, packing, and story—done right.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Paid Ads (Google Search + Meta)</h3>
-              <p className="text-gray-700 mb-2">
-                Only after the foundation is live and tracking works. High-intent buyers, not cheap clicks.
-              </p>
-            </div>
+      {/* Add-ons */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-12 text-center">Add-Ons (After Foundation is Live)</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: Film, title: 'Video Editing + Posting', desc: 'Send us raw footage, we edit + schedule posts' },
+              { icon: Camera, title: 'On-Location Filming', desc: 'We come to your farm, shoot, direct, plan content' },
+              { icon: TrendingUp, title: 'Paid Ads (Google/Meta)', desc: 'Only after tracking is live. Budget-based campaigns.' }
+            ].map((addon, idx) => (
+              <div key={idx} className="bg-[#F5F5F5] rounded-xl p-6 border border-gray-200 hover:border-[#AED354] transition-all text-center">
+                <addon.icon className="w-8 h-8 text-[#AED354] mx-auto mb-3" />
+                <h3 className="font-bold text-[#0B0B0B] mb-2">{addon.title}</h3>
+                <p className="text-sm text-[#6B7280]">{addon.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SEO/Google */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">Get Found on Google</h2>
-          <p className="text-lg text-gray-600 mb-10 text-center">Where high-intent buyers already search</p>
-          
-          <div className="bg-gray-50 rounded-xl border border-gray-200 p-8 mb-6">
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span><strong>Local rankings:</strong> "farm near me", "wholesale [product]", "[city] [product]"</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span><strong>Google Business Profile</strong> optimization + weekly updates</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span><strong>On-page SEO</strong> + landing pages by product + location</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span><strong>Tracking:</strong> calls, forms, direction clicks, and booked calls</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 mb-2">Optional: Google Shopping / Merchant Center</h3>
-            <p className="text-sm text-gray-700">
-              Best for farms selling shippable products (plants, cuttings, boxes, packaged goods). We set up the feed and listings so products show up when people search to buy.
-            </p>
+      {/* Google Visibility */}
+      <section className="py-20 bg-[#F5F5F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-12 text-center">Google: Your 24/7 Sales Channel</h2>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white rounded-xl p-8 border border-gray-200 hover:border-[#AED354] transition-all">
+              <Search className="w-8 h-8 text-[#AED354] mb-4" />
+              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Local SEO</h3>
+              <p className="text-[#6B7280] mb-4">
+                Rank for "[product] near me" and "[your category] [city]". Google Business Profile optimized for local discovery.
+              </p>
+              <ul className="space-y-2 text-sm text-[#6B7280]">
+                <li>• GMB setup + optimization</li>
+                <li>• Location-based landing pages</li>
+                <li>• Review prompts for credibility</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl p-8 border border-gray-200 hover:border-[#AED354] transition-all">
+              <ShoppingCart className="w-8 h-8 text-[#AED354] mb-4" />
+              <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">Google Shopping (Optional)</h3>
+              <p className="text-[#6B7280] mb-4">
+                For shippable products: Google Shopping feed integration. Show up in product searches with images, prices, stock.
+              </p>
+              <ul className="space-y-2 text-sm text-[#6B7280]">
+                <li>• Product feed setup</li>
+                <li>• Merchant Center integration</li>
+                <li>• Performance tracking</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How It Works</h2>
+      <section className="py-20 bg-[#F5F5F5]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-12 text-center">How It Works</h2>
           <div className="space-y-8">
-            <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Diagnose (Week 1)</h3>
-                <p className="text-gray-700">15-min audit call. We review your current setup, identify leaks, and map out what to build first. 2 hours of your time total for info gathering.</p>
+            {[
+              { num: '1', title: 'Diagnosis (1 week)', items: ['Audit current setup', 'Define goals + constraints', 'Map buyer journey'] },
+              { num: '2', title: 'Build (2–4 weeks)', items: ['Site, forms, automation', 'Google setup + tracking', 'Content plan'] },
+              { num: '3', title: 'Launch + Optimize (ongoing)', items: ['Monitor lead flow', 'A/B test pages/CTAs', 'Refine based on data'] }
+            ].map((phase, idx) => (
+              <div key={idx} className="bg-white rounded-xl p-8 border-l-4 border-[#AED354]">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#0B0B0B] rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                    {phase.num}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#0B0B0B] mb-3">{phase.title}</h3>
+                    <ul className="space-y-2 text-[#6B7280]">
+                      {phase.items.map((item, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5 text-[#AED354] flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Build (Weeks 2-4)</h3>
-                <p className="text-gray-700">We build: intake forms, landing pages, email automation, CRM pipeline, tracking. You focus on harvest. System launches in 30 days.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-6">
-              <div className="bg-green-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Optimize (Ongoing)</h3>
-                <p className="text-gray-700">Training + handoff. You own the system. Optional: we monitor performance and optimize monthly (Growth/Scale packages only).</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -233,9 +223,9 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-[#F5F5F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Common Questions</h2>
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-12 text-center">Common Questions</h2>
           <div className="space-y-4">
             {[
               {
@@ -260,11 +250,11 @@ export default function Home() {
               }
             ].map((faq, idx) => (
               <details key={idx} className="bg-white rounded-lg p-6 border border-gray-200 group">
-                <summary className="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                <summary className="font-semibold text-[#0B0B0B] cursor-pointer list-none flex justify-between items-center hover:text-[#AED354] transition-colors">
                   <span>{faq.q}</span>
-                  <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+                  <ChevronDown className="w-5 h-5 text-[#6B7280] group-open:rotate-180 transition-transform" />
                 </summary>
-                <p className="text-gray-700 mt-3 pl-4 border-l-4 border-green-800">{faq.a}</p>
+                <p className="text-[#6B7280] mt-3 pl-4 border-l-4 border-[#AED354]">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -272,26 +262,30 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-green-800 text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Booking Side */}
-            <div>
-              <h2 className="text-3xl font-bold mb-4">Book a 15-Min Farm Growth Audit</h2>
-              <p className="text-green-100 mb-6">We review your setup and show you exactly what to build first.</p>
-              <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 w-full">
-                  Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <p className="text-sm text-green-100 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
-            </div>
-
-            {/* Quick Intake Side */}
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-4">Or Get a Quote</h3>
-              <QuickIntakeForm />
-            </div>
+      <section className="py-20 bg-gradient-to-b from-[#F5F5F5] to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-[#0B0B0B] mb-6">Ready to Build Your Farm's Pipeline?</h2>
+          <p className="text-xl text-[#6B7280] mb-8">
+            Book a 15-minute call or submit the quick intake to get exact pricing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link to={createPageUrl('FarmGrowthAudit')}>
+              <Button size="lg" className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:ring-2 hover:ring-[#AED354] text-white px-8 transition-all">
+                Book a 15-Min Farm Growth Audit
+              </Button>
+            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-[#0B0B0B] text-[#0B0B0B] hover:bg-[#F5F5F5] px-8"
+            >
+              Get a Quote (60 seconds)
+            </Button>
+          </div>
+          
+          <div className="bg-white rounded-xl p-8 border border-gray-200 max-w-xl mx-auto">
+            <h3 className="text-xl font-bold text-[#0B0B0B] mb-4">Or Get a Quote</h3>
+            <QuickIntakeForm />
           </div>
         </div>
       </section>
@@ -353,7 +347,7 @@ function QuickIntakeForm() {
         required
         value={formData.name}
         onChange={(e) => setFormData({...formData, name: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+        className="w-full px-4 py-2 rounded border border-gray-300 text-gray-900 placeholder-gray-500"
       />
       <input
         type="text"
@@ -361,7 +355,7 @@ function QuickIntakeForm() {
         required
         value={formData.farm}
         onChange={(e) => setFormData({...formData, farm: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+        className="w-full px-4 py-2 rounded border border-gray-300 text-gray-900 placeholder-gray-500"
       />
       <input
         type="email"
@@ -369,41 +363,27 @@ function QuickIntakeForm() {
         required
         value={formData.email}
         onChange={(e) => setFormData({...formData, email: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+        className="w-full px-4 py-2 rounded border border-gray-300 text-gray-900 placeholder-gray-500"
       />
       <input
         type="tel"
         placeholder="Phone"
         value={formData.phone}
         onChange={(e) => setFormData({...formData, phone: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+        className="w-full px-4 py-2 rounded border border-gray-300 text-gray-900 placeholder-gray-500"
       />
       <select
         required
         value={formData.goal}
         onChange={(e) => setFormData({...formData, goal: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+        className="w-full px-4 py-2 rounded border border-gray-300 text-gray-900"
       >
         <option value="">Goal *</option>
         <option value="B2B Growth">B2B Growth</option>
         <option value="B2C Conversion">B2C Conversion</option>
         <option value="Both">Both</option>
       </select>
-      <input
-        type="text"
-        placeholder="Weekly Capacity (optional)"
-        value={formData.capacity}
-        onChange={(e) => setFormData({...formData, capacity: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
-      />
-      <input
-        type="date"
-        placeholder="Season Start Date"
-        value={formData.season_start}
-        onChange={(e) => setFormData({...formData, season_start: e.target.value})}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
-      />
-      <Button type="submit" disabled={loading} className="w-full bg-white text-green-800 hover:bg-gray-100">
+      <Button type="submit" disabled={loading} className="w-full bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:ring-2 hover:ring-[#AED354] text-white transition-all">
         {loading ? 'Sending...' : 'Get Quote'}
       </Button>
     </form>
