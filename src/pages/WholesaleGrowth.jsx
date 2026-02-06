@@ -15,7 +15,7 @@ export default function WholesaleGrowth() {
             Stop relying on DMs. Build a wholesale pipeline that qualifies buyers for you.
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Turn wholesale inquiries into qualified accounts with automated intake, buyer kits, and clear pricing tiers—so you're not answering the same questions all day.
+            Turn wholesale inquiries into qualified accounts with automated intake, buyer kits, and clear pricing tiers—so you\'re not answering the same questions all day.
           </p>
           <a href="#wholesale-form">
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
@@ -51,7 +51,7 @@ export default function WholesaleGrowth() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">The Solution: Wholesale Growth System</h2>
           <p className="text-center text-gray-600 mb-12">
-            A complete buyer pipeline that works while you grow. Here's what you get:
+            A complete buyer pipeline that works while you grow. Here\'s what you get:
           </p>
           
           <div className="bg-white rounded-xl p-8 border border-gray-200">
@@ -101,7 +101,7 @@ export default function WholesaleGrowth() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Wholesale Intake</h2>
             <p className="text-gray-600">
-              Fill out the form below and we'll send you a custom plan within 48 hours.
+              Fill out the form below and we\'ll send you a custom plan within 48 hours.
             </p>
           </div>
           <div className="bg-white rounded-xl p-8 border border-gray-200">

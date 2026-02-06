@@ -27,13 +27,13 @@ export default function About() {
               Most farms don't have a marketing problem. They have a <strong>pipeline problem</strong>.
             </p>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Inquiries come in through DMs, email, phone calls—but there's no system to qualify buyers, follow up automatically, or track what's working. The owner ends up answering the same questions 20 times a week.
+              Inquiries come in through DMs, email, phone calls—but there\'s no system to qualify buyers, follow up automatically, or track what\'s working. The owner ends up answering the same questions 20 times a week.
             </p>
             <p className="text-gray-700 leading-relaxed mb-6">
-              That's where we come in. We build the pipeline: website, intake forms, automation, tracking, and content designed to drive action—not vanity reach.
+              That\'s where we come in. We build the pipeline: website, intake forms, automation, tracking, and content designed to drive action—not vanity reach.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              We're operations-first. We don't promise viral videos or "going wide." We promise clarity, premium positioning, and systems that work while you grow.
+              We\'re operations-first. We don\'t promise viral videos or "going wide." We promise clarity, premium positioning, and systems that work while you grow.
             </p>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function About() {
               {
                 icon: Users,
                 title: 'Partnership',
-                desc: 'We're not just a vendor. We're a partner in your growth—strategy, execution, and optimization.'
+                desc: 'We\'re not just a vendor. We\'re a partner in your growth—strategy, execution, and optimization.'
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-xl p-8 border border-gray-200 text-center">
@@ -80,7 +80,7 @@ export default function About() {
             Let's build your buyer pipeline.
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Book a strategy call and we'll show you exactly what to build first.
+            Book a strategy call and we\'ll show you exactly what to build first.
           </p>
           <Link to={createPageUrl('Contact')}>
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">

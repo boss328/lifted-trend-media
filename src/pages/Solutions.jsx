@@ -33,13 +33,13 @@ export default function Solutions() {
         'Shot list (phone-filmable, no crew needed)',
         'Posting schedule + hooks that drive action',
         'DM/comment conversion templates',
-        'Performance review (what drives orders vs. what doesn't)',
+        'Performance review (what drives orders vs. what doesn\'t)',
         'Iteration based on conversion data'
       ],
       timeline: {
         '30 days': 'Strategy + shot list delivered',
         '60 days': 'First batch posted, conversion tracking live',
-        '90 days': 'Optimized based on what's working'
+        '90 days': 'Optimized based on what\'s working'
       }
     },
     {
@@ -148,7 +148,7 @@ export default function Solutions() {
             Not sure where to start?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Book a strategy call. We'll diagnose your current setup and recommend which pillars to build first.
+            Book a strategy call. We\'ll diagnose your current setup and recommend which pillars to build first.
           </p>
           <Link to={createPageUrl('Contact')}>
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">

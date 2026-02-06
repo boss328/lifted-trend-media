@@ -46,7 +46,7 @@ export default function Process() {
         'Posting schedule + hooks that drive action',
         'DM/comment conversion templates',
         'Landing pages for preorders, drops, or pickup',
-        'Performance review: what drives orders vs. what doesn't'
+        'Performance review: what drives orders vs. what doesn\'t'
       ],
       timeline: '30–60 days'
     },
@@ -134,7 +134,7 @@ export default function Process() {
             Ready to start building?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Book a strategy call and we'll walk through your current setup, identify conversion leaks, and show you exactly what to build first.
+            Book a strategy call and we\'ll walk through your current setup, identify conversion leaks, and show you exactly what to build first.
           </p>
           <Link to={createPageUrl('Contact')}>
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">

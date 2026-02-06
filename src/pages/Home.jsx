@@ -123,8 +123,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: 'More qualified inquiries', desc: 'Buyer intake forms that filter volume, pricing tier, and timeline before you pick up the phone.' },
-              { title: 'Faster quoting + less back-and-forth', desc: 'Automated lead routing and wholesale kits so you're not answering the same questions all day.' },
-              { title: 'Tracking that proves what's working', desc: 'Verified conversion events, pipeline stages, and cost-per-lead data—not vanity reach.' }
+              { title: 'Faster quoting + less back-and-forth', desc: 'Automated lead routing and wholesale kits so you\'re not answering the same questions all day.' },
+              { title: 'Tracking that proves what\'s working', desc: 'Verified conversion events, pipeline stages, and cost-per-lead data—not vanity reach.' }
             ].map((item, idx) => (
               <div key={idx} className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
@@ -202,7 +202,7 @@ export default function Home() {
               { q: 'What do you need from me?', a: 'Product info, photos/videos (we'll give you a shot list), your availability windows, and clarity on capacity constraints. We handle the rest.' },
               { q: 'Do you work with both wholesale and B2C?', a: 'Yes. Some clients need both systems, others focus on one. We build what matches your operational reality.' },
               { q: 'Do I own everything?', a: 'Yes. Website, content, tracking setup, and all login credentials transfer to you. No lock-in.' },
-              { q: 'What if I already have a website?', a: 'We'll audit it first. Sometimes we improve what's there; other times a rebuild makes more sense. We'll tell you which.' },
+              { q: 'What if I already have a website?', a: 'We\'ll audit it first. Sometimes we improve what\'s there; other times a rebuild makes more sense. We\'ll tell you which.' },
               { q: 'What about seasonality?', a: 'We build systems that work year-round. Off-season content builds your list; peak season content drives orders. Timing is everything.' }
             ].map((faq, idx) => (
               <details key={idx} className="bg-white rounded-lg p-6 border border-gray-200">
@@ -221,7 +221,7 @@ export default function Home() {
             Ready to build a buyer pipeline that works while you grow?
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            Book a strategy call. We'll audit your current setup and show you exactly what to build first.
+            Book a strategy call. We\'ll audit your current setup and show you exactly what to build first.
           </p>
           <Link to={createPageUrl('Contact')} onClick={() => trackEvent('footer_cta_click')}>
             <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100">

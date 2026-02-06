@@ -101,7 +101,7 @@ export default function B2CConversion() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your B2C Audit</h2>
             <p className="text-gray-600">
-              Tell us about your current setup and we'll send you a conversion plan within 48 hours.
+              Tell us about your current setup and we\'ll send you a conversion plan within 48 hours.
             </p>
           </div>
           <div className="bg-white rounded-xl p-8 border border-gray-200">
