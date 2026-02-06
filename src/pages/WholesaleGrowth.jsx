@@ -35,8 +35,8 @@ export default function WholesaleGrowth() {
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
               '"Can you do 5 cases?" No. Minimum is 50. Call ends.',
-              '"What\'s your pricing?" Depends on volume and frequency. They never follow up.',
-              '"Can you deliver to San Francisco?" No. You\'re 300 miles south. Wasted call.',
+              '"What's your pricing?" Depends on volume and frequency. They never follow up.',
+              '"Can you deliver to San Francisco?" No. You're 300 miles south. Wasted call.',
               'Buyer sounds excited. You send pricing. Crickets for 3 weeks. Deal dies.'
             ].map((problem, idx) => (
               <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border-l-4 border-red-600">
@@ -71,12 +71,12 @@ export default function WholesaleGrowth() {
               <div className="text-green-800 font-bold text-sm mb-3">STEP 2: AUTOMATION</div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">System Sends Wholesale Kit</h3>
               <p className="text-gray-700 mb-4">Line sheet, pricing tiers, pack sizes, delivery terms, order minimums—all sent automatically.</p>
-              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Serious buyers get everything they need. You haven\'t typed a word yet.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Serious buyers get everything they need. You haven't typed a word yet.</p>
             </div>
             <div className="bg-white rounded-xl p-6 border border-gray-200">
               <div className="text-green-800 font-bold text-sm mb-3">STEP 3: FOLLOW-UP</div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">You Get Notified</h3>
-              <p className="text-gray-700 mb-4">Lead goes into your CRM. System reminds you when to follow up. You call when they\'re ready to buy.</p>
+              <p className="text-gray-700 mb-4">Lead goes into your CRM. System reminds you when to follow up. You call when they're ready to buy.</p>
               <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Talk to buyers, not tire-kickers. Close deals faster.</p>
             </div>
           </div>
@@ -106,11 +106,11 @@ export default function WholesaleGrowth() {
               <p className="text-gray-700">Those 3 accounts came from months of networking. This system finds the next 3 in weeks—without you leaving the field.</p>
             </div>
             <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
-              <p className="font-bold text-gray-900 mb-2">"My product sells itself. I don\'t need marketing."</p>
+              <p className="font-bold text-gray-900 mb-2">"My product sells itself. I don't need marketing."</p>
               <p className="text-gray-700">Great product gets you the first order. The system gets you recurring orders from 10+ accounts instead of 3.</p>
             </div>
             <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
-              <p className="font-bold text-gray-900 mb-2">"What if I can\'t fulfill large orders?"</p>
+              <p className="font-bold text-gray-900 mb-2">"What if I can't fulfill large orders?"</p>
               <p className="text-gray-700">We set volume caps in your intake form. Buyers only see minimums you can actually hit. No overselling.</p>
             </div>
           </div>
@@ -141,7 +141,7 @@ export default function WholesaleGrowth() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Start Your Wholesale Intake</h2>
             <p className="text-gray-600">
-              Fill out the form below and we\'ll send you a custom plan within 48 hours.
+              Fill out the form below and we'll send you a custom plan within 48 hours.
             </p>
           </div>
           <div className="bg-white rounded-xl p-8 border border-gray-200">
