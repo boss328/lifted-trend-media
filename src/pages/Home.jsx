@@ -243,16 +243,16 @@ export default function Home() {
                 a: 'Yes. Season Sprint: 10-day build. Landing page, intake form, tracking, and automation live before first harvest. Full system optimization continues post-launch.'
               },
               {
+                q: 'What if leads don\'t come in right away?',
+                a: 'That\'s normal. We launch with tracking so we can see exactly where the bottleneck is: traffic (visibility) or conversion (site/forms/follow-up). You get a post-launch optimization window included, where we improve pages, CTAs, forms, and follow-up based on real data. If you want faster volume, we can add Google Search or Meta once tracking is live.'
+              },
+              {
                 q: 'What if I get more orders than I can handle?',
                 a: 'We cap your forms at your capacity. When you hit the limit, new orders join the waitlist. No overselling.'
               },
               {
                 q: 'Do I own this or pay monthly forever?',
                 a: 'You own it. One-time build fee. Optional monthly support for ongoing optimization (Growth/Scale only).'
-              },
-              {
-                q: 'What if you build it and no leads come in?',
-                a: '90-day performance extension. We optimize for free until you get qualified leads. But you must drive traffic per our plan.'
               },
               {
                 q: 'I already have a website. Do I need to rebuild?',
