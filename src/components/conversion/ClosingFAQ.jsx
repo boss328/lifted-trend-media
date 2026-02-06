@@ -16,7 +16,7 @@ export default function ClosingFAQ() {
     },
     {
       q: 'How do I know this will work for my farm?',
-      a: 'If you have a product that sells and buyers exist, the system works. If you're still validating product-market fit, you're not ready.'
+      a: "If you have a product that sells and buyers exist, the system works. If you're still validating product-market fit, you're not ready."
     },
     {
       q: 'I already have a website. Do I need to rebuild?',
