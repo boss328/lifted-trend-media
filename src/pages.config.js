@@ -68,6 +68,7 @@ import Terms from './pages/Terms';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
+import ThankYouAudit from './pages/ThankYouAudit';
 import __Layout from './Layout.jsx';
 
 
@@ -93,6 +94,7 @@ export const PAGES = {
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
+    "ThankYouAudit": ThankYouAudit,
 }
 
 export const pagesConfig = {
