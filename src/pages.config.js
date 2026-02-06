@@ -49,12 +49,24 @@
  */
 import Home from './pages/Home';
 import Solutions from './pages/Solutions';
+import WholesaleGrowth from './pages/WholesaleGrowth';
+import B2CConversion from './pages/B2CConversion';
+import Process from './pages/Process';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Resources from './pages/Resources';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Home": Home,
     "Solutions": Solutions,
+    "WholesaleGrowth": WholesaleGrowth,
+    "B2CConversion": B2CConversion,
+    "Process": Process,
+    "About": About,
+    "Contact": Contact,
+    "Resources": Resources,
 }
 
 export const pagesConfig = {
