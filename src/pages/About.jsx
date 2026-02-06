@@ -62,8 +62,8 @@ export default function About() {
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-xl p-8 border border-[#E6E0D5] shadow-sm text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-                  <item.icon className="w-8 h-8 text-green-800" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#EEF3EC] rounded-full mb-4">
+                  <item.icon className="w-8 h-8 text-[#1F3D2B]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>

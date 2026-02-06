@@ -121,13 +121,13 @@ ${cleanData.notes || 'None'}
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
-                    <Mail className="w-5 h-5 text-green-800" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-[#EEF3EC] rounded-lg">
+                    <Mail className="w-5 h-5 text-[#1F3D2B]" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <a href="mailto:ahron@mydragonplug.com" className="text-green-800 hover:text-green-900 font-medium">
+                  <h3 className="font-semibold text-[#1A1A1A] mb-1">Email</h3>
+                  <a href="mailto:ahron@mydragonplug.com" className="text-[#1F3D2B] hover:text-[#2A553A] font-medium">
                     ahron@mydragonplug.com
                   </a>
                 </div>
@@ -135,13 +135,13 @@ ${cleanData.notes || 'None'}
               
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
-                    <Phone className="w-5 h-5 text-green-800" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-[#EEF3EC] rounded-lg">
+                    <Phone className="w-5 h-5 text-[#1F3D2B]" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <a href="tel:8587520666" className="text-green-800 hover:text-green-900 font-medium">
+                  <h3 className="font-semibold text-[#1A1A1A] mb-1">Phone</h3>
+                  <a href="tel:8587520666" className="text-[#1F3D2B] hover:text-[#2A553A] font-medium">
                     858-752-0666
                   </a>
                 </div>
@@ -149,12 +149,12 @@ ${cleanData.notes || 'None'}
               
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
-                    <MapPin className="w-5 h-5 text-green-800" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-[#EEF3EC] rounded-lg">
+                    <MapPin className="w-5 h-5 text-[#1F3D2B]" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Service Area</h3>
+                  <h3 className="font-semibold text-[#1A1A1A] mb-1">Service Area</h3>
                   <p className="text-gray-700">San Diego County + Southern California</p>
                   <p className="text-sm text-gray-500 mt-1">Based in San Diego, CA 92122</p>
                 </div>
@@ -162,12 +162,12 @@ ${cleanData.notes || 'None'}
               
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-green-800" />
+                  <div className="inline-flex items-center justify-center w-10 h-10 bg-[#EEF3EC] rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-[#1F3D2B]" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Response Time</h3>
+                  <h3 className="font-semibold text-[#1A1A1A] mb-1">Response Time</h3>
                   <p className="text-gray-700">We reply within 1 business day.</p>
                 </div>
               </div>
