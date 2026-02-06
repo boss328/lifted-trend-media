@@ -16,8 +16,7 @@ export default function Contact() {
     phone: '',
     business: '',
     goal: '',
-    notes: '',
-    website: '' // Honeypot field
+    notes: ''
   });
 
   const handleChange = (field, value) => {
@@ -26,35 +25,10 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Honeypot spam protection
-    if (formData.website) {
-      return;
-    }
-    
     setLoading(true);
     
     try {
       await base44.entities.BookingRequest.create(formData);
-      
-      // Send email notification
-      await base44.integrations.Core.SendEmail({
-        from_name: 'Lifted Trend Media Website',
-        to: 'ahron@mydragonplug.com',
-        subject: `New Strategy Call Request: ${formData.name}`,
-        body: `
-New strategy call request:
-
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-Business: ${formData.business || 'Not provided'}
-Goal: ${formData.goal}
-
-Notes: ${formData.notes || 'None'}
-        `
-      });
-      
       base44.analytics.track({ eventName: 'booking_request_submit', properties: { success: true } });
       setSubmitted(true);
     } catch (error) {
@@ -73,16 +47,11 @@ Notes: ${formData.notes || 'None'}
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Request Received</h1>
           <p className="text-xl text-gray-600 mb-8">
-            Thanks for reaching out. We'll get back to you within 1 business day with next steps.
+            Thanks for reaching out. We'll review your request and get back to you within 24 hours with next steps.
           </p>
-          <p className="text-gray-600 mb-6">
-            Check your email for a confirmation.
+          <p className="text-gray-600">
+            Check your email for a confirmation. If you don't see it, check your spam folder.
           </p>
-          <Link to={createPageUrl('FarmGrowthAudit')}>
-            <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-              Or Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
         </div>
       </div>
     );
@@ -105,34 +74,27 @@ Notes: ${formData.notes || 'None'}
       {/* Contact Info */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
                 <Mail className="w-6 h-6 text-green-800" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-              <a href="mailto:ahron@mydragonplug.com" className="text-gray-600 hover:text-green-800 transition-colors">ahron@mydragonplug.com</a>
+              <p className="text-gray-600">[CONTACT_EMAIL]</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
                 <Phone className="w-6 h-6 text-green-800" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-              <a href="tel:858-752-0666" className="text-gray-600 hover:text-green-800 transition-colors">858-752-0666</a>
+              <p className="text-gray-600">[PHONE]</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
                 <MapPin className="w-6 h-6 text-green-800" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Service Area</h3>
-              <p className="text-gray-600">San Diego County + Southern California</p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-3">
-                <Mail className="w-6 h-6 text-green-800" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Response Time</h3>
-              <p className="text-gray-600">We reply within 1 business day</p>
+              <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
+              <p className="text-gray-600">[ADDRESS]</p>
             </div>
           </div>
         </div>
@@ -208,17 +170,6 @@ Notes: ${formData.notes || 'None'}
                   rows={4}
                 />
               </div>
-
-              {/* Honeypot field - hidden from users */}
-              <input
-                type="text"
-                name="website"
-                value={formData.website}
-                onChange={(e) => handleChange('website', e.target.value)}
-                style={{ position: 'absolute', left: '-9999px' }}
-                tabIndex="-1"
-                autoComplete="off"
-              />
 
               <Button type="submit" disabled={loading} className="w-full bg-green-800 hover:bg-green-900 text-white">
                 {loading ? (
