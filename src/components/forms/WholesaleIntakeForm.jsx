@@ -47,8 +47,24 @@ export default function WholesaleIntakeForm() {
     setLoading(true);
     
     try {
-      await base44.entities.WholesaleLead.create(formData);
-      base44.analytics.track({ eventName: 'wholesale_intake_submit', properties: { success: true } });
+      // Auto-score based on criteria
+      let score = 'Warm';
+      if (formData.is_decision_maker && formData.budget_range && formData.budget_range !== 'Under $5K' && formData.response_speed === 'Within 24 hours') {
+        score = 'Hot';
+      } else if (!formData.is_decision_maker || formData.budget_range === 'Under $5K') {
+        score = 'Cold';
+      }
+      
+      const leadData = { ...formData, score };
+      await base44.entities.WholesaleLead.create(leadData);
+      
+      // Trigger notification automation
+      await base44.functions.invoke('sendLeadNotification', {
+        leadData,
+        leadType: 'Wholesale'
+      });
+      
+      base44.analytics.track({ eventName: 'wholesale_intake_submit', properties: { success: true, score } });
       navigate(createPageUrl('ThankYouWholesale'));
     } catch (error) {
       alert('Error submitting form. Please try again.');

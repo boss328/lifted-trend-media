@@ -12,7 +12,8 @@ export default function NinetyDayRoadmap() {
         'Week 2-3: Site + forms + automation built',
         'Week 4: Training, handoff, system goes live'
       ],
-      outcome: 'Pipeline is running. Leads are qualifying themselves.'
+      outcome: 'Pipeline is running. Leads are qualifying themselves.',
+      metrics: '3-5 qualified inquiries/week, 80% reduction in manual follow-up'
     },
     {
       icon: Target,
@@ -23,7 +24,8 @@ export default function NinetyDayRoadmap() {
         'Week 6: First batch of content posted',
         'Week 7-8: Performance tracking installed, first data comes in'
       ],
-      outcome: 'You know what content drives orders vs. what doesn\'t.'
+      outcome: 'You know what content drives orders vs. what doesn\'t.',
+      metrics: '10-15 inquiries/week, 60% increase in website traffic'
     },
     {
       icon: TrendingUp,
@@ -34,7 +36,8 @@ export default function NinetyDayRoadmap() {
         'Week 11: Paid ads launch (if applicable)',
         'Week 12: Review results, plan next quarter'
       ],
-      outcome: 'Predictable lead flow. You control growth via ad spend.'
+      outcome: 'Predictable lead flow. You control growth via ad spend.',
+      metrics: '20+ inquiries/week, 2-5 new wholesale accounts or 50+ B2C orders/month'
     }
   ];
 
@@ -65,8 +68,14 @@ export default function NinetyDayRoadmap() {
             ))}
           </ul>
           <div className="bg-green-50 rounded-lg p-3 border-l-4 border-green-800">
-            <span className="text-sm font-semibold text-gray-900">Outcome: </span>
-            <span className="text-sm text-gray-700">{phase.outcome}</span>
+            <div className="mb-2">
+              <span className="text-sm font-semibold text-gray-900">Outcome: </span>
+              <span className="text-sm text-gray-700">{phase.outcome}</span>
+            </div>
+            <div>
+              <span className="text-sm font-semibold text-gray-900">Metrics: </span>
+              <span className="text-sm text-gray-700">{phase.metrics}</span>
+            </div>
           </div>
         </div>
       ))}

@@ -4,6 +4,8 @@ import { createPageUrl } from '../utils';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, X } from 'lucide-react';
 import WholesaleIntakeForm from '../components/forms/WholesaleIntakeForm';
+import NotAFitSection from '../components/conversion/NotAFitSection';
+import FitCheckSection from '../components/conversion/FitCheckSection';
 
 export default function WholesaleGrowth() {
   return (
@@ -118,6 +120,17 @@ export default function WholesaleGrowth() {
                 Talk Through Your Situation <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Fit Check */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Are You a Fit?</h2>
+          <div className="space-y-6">
+            <FitCheckSection />
+            <NotAFitSection />
           </div>
         </div>
       </section>

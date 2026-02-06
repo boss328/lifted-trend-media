@@ -63,9 +63,9 @@ export default function Layout({ children, currentPageName }) {
                   </Link>
                 )
               ))}
-              <Link to={createPageUrl('Contact')}>
+              <Link to={createPageUrl('FarmGrowthAudit')}>
                 <Button className="bg-green-800 hover:bg-green-900 text-white">
-                  Book Strategy Call
+                  Book 15-Min Audit Call
                 </Button>
               </Link>
             </div>
@@ -118,9 +118,9 @@ export default function Layout({ children, currentPageName }) {
                   </Link>
                 )
               ))}
-              <Link to={createPageUrl('Contact')} onClick={() => setMobileMenuOpen(false)}>
+              <Link to={createPageUrl('FarmGrowthAudit')} onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
-                  Book Strategy Call
+                  Book 15-Min Audit Call
                 </Button>
               </Link>
             </div>

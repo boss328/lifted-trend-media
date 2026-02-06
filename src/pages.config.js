@@ -63,6 +63,11 @@ import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
 import ProofLibrary from './pages/ProofLibrary';
 import FarmGrowthAudit from './pages/FarmGrowthAudit';
+import NurseryGrowth from './pages/NurseryGrowth';
+import FruitFarmGrowth from './pages/FruitFarmGrowth';
+import RanchGrowth from './pages/RanchGrowth';
+import OrchardGrowth from './pages/OrchardGrowth';
+import FlowerFarmGrowth from './pages/FlowerFarmGrowth';
 import __Layout from './Layout.jsx';
 
 
@@ -83,6 +88,11 @@ export const PAGES = {
     "WholesaleGrowth": WholesaleGrowth,
     "ProofLibrary": ProofLibrary,
     "FarmGrowthAudit": FarmGrowthAudit,
+    "NurseryGrowth": NurseryGrowth,
+    "FruitFarmGrowth": FruitFarmGrowth,
+    "RanchGrowth": RanchGrowth,
+    "OrchardGrowth": OrchardGrowth,
+    "FlowerFarmGrowth": FlowerFarmGrowth,
 }
 
 export const pagesConfig = {

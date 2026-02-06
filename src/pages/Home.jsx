@@ -11,6 +11,7 @@ import RiskReversalSection from '../components/conversion/RiskReversalSection';
 import ROIFraming from '../components/conversion/ROIFraming';
 import ScopeControlWall from '../components/conversion/ScopeControlWall';
 import ClosingFAQ from '../components/conversion/ClosingFAQ';
+import PackagesSection from '../components/conversion/PackagesSection';
 
 export default function Home() {
   const trackEvent = (eventName) => {
