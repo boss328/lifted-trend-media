@@ -54,7 +54,6 @@ import Contact from './pages/Contact';
 import FarmGrowthAudit from './pages/FarmGrowthAudit';
 import FlowerFarmGrowth from './pages/FlowerFarmGrowth';
 import FruitFarmGrowth from './pages/FruitFarmGrowth';
-import Home from './pages/Home';
 import LeadsDashboard from './pages/LeadsDashboard';
 import NurseryGrowth from './pages/NurseryGrowth';
 import OrchardGrowth from './pages/OrchardGrowth';
@@ -68,6 +67,7 @@ import Terms from './pages/Terms';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
@@ -79,7 +79,6 @@ export const PAGES = {
     "FarmGrowthAudit": FarmGrowthAudit,
     "FlowerFarmGrowth": FlowerFarmGrowth,
     "FruitFarmGrowth": FruitFarmGrowth,
-    "Home": Home,
     "LeadsDashboard": LeadsDashboard,
     "NurseryGrowth": NurseryGrowth,
     "OrchardGrowth": OrchardGrowth,
@@ -93,6 +92,7 @@ export const PAGES = {
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
+    "Home": Home,
 }
 
 export const pagesConfig = {

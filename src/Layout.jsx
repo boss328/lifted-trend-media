@@ -26,11 +26,15 @@ export default function Layout({ children, currentPageName }) {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <nav className="border-b border-gray-200 bg-white sticky top-0 z-50">
+      <nav className="border-b border-gray-200 bg-white sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to={createPageUrl('Home')} className="text-2xl font-bold text-gray-900">
-              [LOGO] Lifted Trend Media
+            <Link to={createPageUrl('Home')} className="flex items-center">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/11c28eae0_unnamed.png" 
+                alt="Lifted Trend Media logo"
+                className="h-11 md:h-11 w-auto"
+              />
             </Link>
 
             <div className="hidden lg:flex items-center space-x-8">
@@ -57,15 +61,15 @@ export default function Layout({ children, currentPageName }) {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className="text-gray-700 hover:text-gray-900 font-medium"
+                    className="text-gray-700 hover:text-[#AED354] font-semibold transition-colors"
                   >
                     {item.name}
                   </Link>
                 )
               ))}
               <Link to={createPageUrl('FarmGrowthAudit')}>
-                <Button className="bg-green-800 hover:bg-green-900 text-white">
-                  Book 15-Min Audit Call
+                <Button className="bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:outline hover:outline-2 hover:outline-[#AED354] text-white font-semibold transition-all">
+                  Book a 15-Min Farm Growth Audit
                 </Button>
               </Link>
             </div>
@@ -119,8 +123,8 @@ export default function Layout({ children, currentPageName }) {
                 )
               ))}
               <Link to={createPageUrl('FarmGrowthAudit')} onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full bg-green-800 hover:bg-green-900 text-white">
-                  Book 15-Min Audit Call
+                <Button className="w-full bg-[#0B0B0B] hover:bg-[#0B0B0B] hover:outline hover:outline-2 hover:outline-[#AED354] text-white font-semibold">
+                  Book a 15-Min Farm Growth Audit
                 </Button>
               </Link>
             </div>
@@ -132,11 +136,15 @@ export default function Layout({ children, currentPageName }) {
         {children}
       </main>
 
-      <footer className="bg-gray-900 text-white mt-20">
+      <footer className="bg-[#0B0B0B] text-white mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Lifted Trend Media</h3>
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698551da80e812d304a5c6a1/11c28eae0_unnamed.png" 
+                alt="Lifted Trend Media logo"
+                className="h-10 w-auto mb-4"
+              />
               <p className="text-gray-400 text-sm">
                 Marketing systems and content engines for farms, growers, and local food brands.
               </p>
@@ -145,18 +153,18 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to={createPageUrl('WholesaleGrowth')} className="hover:text-white">Wholesale Growth</Link></li>
-                <li><Link to={createPageUrl('B2CConversion')} className="hover:text-white">B2C Conversion</Link></li>
-                <li><Link to={createPageUrl('Process')} className="hover:text-white">How It Works</Link></li>
+                <li><Link to={createPageUrl('WholesaleGrowth')} className="hover:text-[#AED354] transition-colors">Wholesale Growth</Link></li>
+                <li><Link to={createPageUrl('B2CConversion')} className="hover:text-[#AED354] transition-colors">B2C Conversion</Link></li>
+                <li><Link to={createPageUrl('Process')} className="hover:text-[#AED354] transition-colors">How It Works</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link to={createPageUrl('About')} className="hover:text-white">About</Link></li>
-                <li><Link to={createPageUrl('CaseStudies')} className="hover:text-white">Case Studies</Link></li>
-                <li><Link to={createPageUrl('Resources')} className="hover:text-white">Resources</Link></li>
+                <li><Link to={createPageUrl('About')} className="hover:text-[#AED354] transition-colors">About</Link></li>
+                <li><Link to={createPageUrl('CaseStudies')} className="hover:text-[#AED354] transition-colors">Case Studies</Link></li>
+                <li><Link to={createPageUrl('Resources')} className="hover:text-[#AED354] transition-colors">Resources</Link></li>
               </ul>
             </div>
 
@@ -176,8 +184,8 @@ export default function Layout({ children, currentPageName }) {
           <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
             <p>&copy; 2026 Lifted Trend Media. All rights reserved.</p>
             <div className="flex gap-6 mt-4 sm:mt-0">
-              <Link to={createPageUrl('Privacy')} className="hover:text-white">Privacy Policy</Link>
-              <Link to={createPageUrl('Terms')} className="hover:text-white">Terms of Service</Link>
+              <Link to={createPageUrl('Privacy')} className="hover:text-[#AED354] transition-colors">Privacy Policy</Link>
+              <Link to={createPageUrl('Terms')} className="hover:text-[#AED354] transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
