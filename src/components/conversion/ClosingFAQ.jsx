@@ -23,8 +23,8 @@ export default function ClosingFAQ() {
       a: 'Maybe. We audit it first. If it has intake forms, automation, and tracking, we optimize. If not, rebuild is faster.'
     },
     {
-      q: 'What if I don't have time to make content?',
-      a: 'Growth package requires 20 min/week. If you can't commit that, stick with Foundation. Content is optional, not required.'
+      q: "What if I don't have time to make content?",
+      a: "Growth package requires 20 min/week. If you can't commit that, stick with Foundation. Content is optional, not required."
     },
     {
       q: 'Can I pause mid-project if harvest gets crazy?',
@@ -43,12 +43,12 @@ export default function ClosingFAQ() {
       a: 'You own the code. Make changes yourself or hire us hourly. Training includes how to edit forms, content, and tracking.'
     },
     {
-      q: 'Can you guarantee I'll get X new accounts?',
+      q: "Can you guarantee I'll get X new accounts?",
       a: 'No. We guarantee the system launches and works. Results depend on your product, pricing, and market. We control the pipeline, not the market.'
     },
     {
       q: 'What makes you different from [other agency]?',
-      a: 'We don't do branding, creative, or "storytelling." We build pipelines that qualify buyers and automate follow-up. That's it.'
+      a: 'We don\'t do branding, creative, or "storytelling." We build pipelines that qualify buyers and automate follow-up. That\'s it.'
     }
   ];
 
