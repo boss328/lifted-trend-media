@@ -9,31 +9,42 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-green-50 to-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+      <section className="relative py-32 overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="[VIDEO_URL]" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Turn your farm's story into buyers.
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-8">
-            We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B (wholesale) and B2C—without you living on your phone.
+          <p className="text-xl sm:text-2xl text-white/90 mb-8">
+            We build the website + SEO + video content system that captures leads, qualifies them, and converts both B2B and B2C—without you living on your phone.
           </p>
           <Link to={createPageUrl('FarmGrowthAudit')}>
-            <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white text-lg px-8 py-6">
+            <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white text-lg px-8 py-6">
               Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </Link>
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-left">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Web + SEO foundation</strong> that ranks and converts</p>
+              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <p className="text-sm text-white"><strong>Web + SEO foundation</strong> that ranks and converts</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Intake forms + automation</strong> so leads don't get lost</p>
+              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <p className="text-sm text-white"><strong>Intake forms + automation</strong> so leads don't get lost</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-800 mt-1 flex-shrink-0" />
-              <p className="text-sm text-gray-700"><strong>Video content</strong> that drives inquiries (not vanity views)</p>
+              <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+              <p className="text-sm text-white"><strong>Video content</strong> that drives inquiries (not vanity views)</p>
             </div>
           </div>
         </div>
@@ -163,35 +174,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Proof */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">What We Ship</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="font-bold text-gray-900 mb-3">Organic Citrus Farm, Central Valley</h3>
-              <p className="text-sm text-gray-700 mb-4">
-                Before: 15 hours/week answering wholesale inquiries manually. After: intake form filters unqualified buyers. Only talks to decision-makers.
-              </p>
-              <div className="bg-green-100 rounded-lg p-3">
-                <p className="text-sm font-semibold text-green-900">Result: 3 new wholesale accounts in 60 days. 10 hrs/week saved.</p>
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="font-bold text-gray-900 mb-3">Rare Plant Nursery, LA</h3>
-              <p className="text-sm text-gray-700 mb-4">
-                Before: Posted drops on Instagram. 200 DMs per drop. Lost 40% of orders in chaos. After: preorder form + waitlist automation.
-              </p>
-              <div className="bg-green-100 rounded-lg p-3">
-                <p className="text-sm font-semibold text-green-900">Result: 47 preorders in 72 hours. Waitlist captured 80 more.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">How It Works</h2>
           <div className="space-y-8">
@@ -241,7 +225,7 @@ export default function Home() {
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Add-ons:</h4>
                 <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• Wholesale Growth: +$3K–$5K</li>
+                  <li>• B2B Growth: +$3K–$5K</li>
                   <li>• B2C Conversion: +$3K–$5K</li>
                   <li>• Ongoing optimization: $1.5K–$3K/month (optional)</li>
                 </ul>
@@ -262,7 +246,7 @@ export default function Home() {
             {[
               {
                 q: 'My season starts in 4 weeks. Can you build it in time?',
-                a: 'If you provide all info within 3 days, yes. Otherwise, we build it for next season. Rushing guarantees mistakes.'
+                a: 'Yes. Season Sprint: 10-day build. Landing page, intake form, tracking, and automation live before first harvest. Full system optimization continues post-launch.'
               },
               {
                 q: 'What if I get more orders than I can handle?',
@@ -299,11 +283,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Booking Side */}
             <div>
-              <h2 className="text-3xl font-bold mb-4">Book Your Audit Call</h2>
-              <p className="text-green-100 mb-6">15 minutes. We review your setup and show you exactly what to build first.</p>
+              <h2 className="text-3xl font-bold mb-4">Book a 15-Min Farm Growth Audit</h2>
+              <p className="text-green-100 mb-6">We review your setup and show you exactly what to build first.</p>
               <Link to={createPageUrl('FarmGrowthAudit')}>
                 <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 w-full">
-                  Book 15-Min Audit <ArrowRight className="ml-2 w-5 h-5" />
+                  Book a 15-Min Farm Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <p className="text-sm text-green-100 mt-4">Or call: [PHONE] | Email: [EMAIL]</p>
@@ -407,7 +391,7 @@ function QuickIntakeForm() {
         className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
       >
         <option value="">Goal *</option>
-        <option value="Wholesale Growth">Wholesale Growth</option>
+        <option value="B2B Growth">B2B Growth</option>
         <option value="B2C Conversion">B2C Conversion</option>
         <option value="Both">Both</option>
       </select>
