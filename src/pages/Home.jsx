@@ -64,52 +64,33 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">The Foundation System</h2>
-            <p className="text-lg text-gray-600">Site + Forms + Automation + Tracking. Built in 30 days.</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">What We Build</h2>
+            <p className="text-lg text-gray-600">The complete system that turns your farm's story into revenue.</p>
           </div>
 
-          <div className="bg-white rounded-xl border-2 border-green-800 p-8 mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">What You Get:</h3>
-            <ul className="grid md:grid-cols-2 gap-3 text-gray-700">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>Intake forms with auto-qualification</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>Landing pages (wholesale kit or product page)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>CRM pipeline with lead stages</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>Email automation (confirmation + follow-up)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>Performance tracking setup</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-800 mt-0.5 flex-shrink-0" />
-                <span>Training + handoff</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <Package className="w-8 h-8 text-green-800 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">+ Wholesale Growth</h3>
-              <p className="text-sm text-gray-600 mb-3">Add: wholesale kit, buyer qualification logic, volume-based pricing display.</p>
-              <p className="text-xs text-gray-500">Best for: farms selling to restaurants, grocers, distributors.</p>
+              <Target className="w-8 h-8 text-green-800 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Website + SEO Foundation</h3>
+              <p className="text-gray-700 mb-4">
+                Conversion-focused site built for farms (not a brochure). Local SEO setup, landing pages, tracking, and clear CTAs.
+              </p>
             </div>
+
             <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <TrendingUp className="w-8 h-8 text-blue-800 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">+ B2C Conversion</h3>
-              <p className="text-sm text-gray-600 mb-3">Add: preorder forms, waitlist automation, content templates, drop scheduling.</p>
-              <p className="text-xs text-gray-500">Best for: farms selling direct via social, CSA, or U-pick.</p>
+              <Package className="w-8 h-8 text-green-800 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Lead Pipeline (B2B + B2C)</h3>
+              <p className="text-gray-700 mb-4">
+                Separate intake flows, auto-confirmations, and follow-up that runs. You only talk to qualified buyers/customers.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-gray-200 p-6">
+              <TrendingUp className="w-8 h-8 text-green-800 mb-4" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Video Content Engine</h3>
+              <p className="text-gray-700 mb-4">
+                Short-form storytelling that proves quality, harvest, and process. Designed to drive inquiries and orders—not just views.
+              </p>
             </div>
           </div>
         </div>
