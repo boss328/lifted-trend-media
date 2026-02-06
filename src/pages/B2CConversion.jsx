@@ -12,14 +12,14 @@ export default function B2CConversion() {
       <section className="bg-gradient-to-b from-green-50 to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Views don't pay rent. Conversions do.
+            Turn DMs Into Orders. Not "I'll Think About It."
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Turn DMs, comments, and inquiries into preorders, drops, and pickup appointments—with landing pages, offers, and follow-up automation built for action.
+            Landing page captures the order. Preorder form processes payment. Pickup scheduler books the slot. Waitlist holds the next round. All automated.
           </p>
           <a href="#b2c-form">
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-              Start B2C Audit <ArrowRight className="ml-2 w-5 h-5" />
+              See the System <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
         </div>
@@ -28,67 +28,94 @@ export default function B2CConversion() {
       {/* The Problem */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">The Problem</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Why DMs Don\'t Convert</h2>
+          <p className="text-center text-gray-600 mb-10">Interest doesn\'t equal orders. You need a system that closes.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
-              'No landing page for inquiries to convert on',
-              'No follow-up system after someone DMs or comments',
-              'Weak offer positioning (unclear what to buy and when)',
-              'No tracking on what content drives orders',
-              "Capacity leaks: promising deliveries you can't fulfill"
+              '"How much?" You reply with pricing. They disappear.',
+              '"Do you deliver?" You say yes. They ask 4 more questions. Never buy.',
+              '"When\'s your next drop?" You tell them. They forget. No reminder system.',
+              '200 likes on your post. 3 DMs. 0 orders. No way to track what actually converts.'
             ].map((problem, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border border-red-100">
-                <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">{problem}</p>
+              <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border-l-4 border-red-600">
+                <p className="text-gray-900 font-medium">{problem}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* The Solution */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">The Solution: B2C Conversion System</h2>
-          <p className="text-center text-gray-600 mb-12">
-            Landing pages, offer positioning, and content designed to drive orders—not vanity reach.
-          </p>
-          
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">What You Get</h3>
-            <div className="space-y-4">
-              {[
-                { title: 'Conversion-focused landing page(s)', desc: 'Built for preorders, drops, pickup scheduling, or waitlists' },
-                { title: 'Offer positioning + hooks', desc: 'What to say, when to post, and how to drive click/DM/order' },
-                { title: 'Lead capture form + automation', desc: 'Capture inquiries and follow up automatically' },
-                { title: 'Tracking events (verified)', desc: 'Track orders, not vanity metrics' },
-                { title: 'Content engine', desc: 'Short-form videos designed to drive action, not views' },
-                { title: 'Operational clarity', desc: 'Only promise what you can operationally fulfill' }
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 pb-4 border-b border-gray-100 last:border-0">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                    <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="text-center">
+            <a href="#b2c-form">
+              <Button className="bg-green-800 hover:bg-green-900 text-white">
+                See the Conversion System <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Drop Playbook CTA */}
+      {/* The System */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">How the B2C System Works</h2>
+          <p className="text-center text-gray-600 mb-12">Content drives traffic. Landing page converts. Automation follows up.</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 1: CONTENT</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Post With Purpose</h3>
+              <p className="text-gray-700 mb-4">We give you the shot list. Film on your phone. 2-minute videos. Every post ends with: "Link in bio to order."</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">No guessing. No "build your brand." Every post drives action.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 2: CONVERSION</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Landing Page Closes</h3>
+              <p className="text-gray-700 mb-4">They click. They see: product, price, pickup/delivery options, order form. They buy or join waitlist.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">No back-and-forth. No "send me your info." Buy button or waitlist button. That\'s it.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 3: FOLLOW-UP</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Automation Handles It</h3>
+              <p className="text-gray-700 mb-4">Order confirmation sent. Pickup reminder sent. Waitlist notified for next drop. You don\'t touch any of it.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">System runs itself. You focus on growing + fulfilling orders.</p>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10">
+            <h3 className="font-bold text-gray-900 mb-3">What If I\'m Too Busy to Make Content?</h3>
+            <p className="text-gray-700">You film once a week. 15 minutes. We give you the exact shots to capture. Post 2-3 times per week from that batch. Zero daily commitment.</p>
+          </div>
+
+          <div className="text-center">
+            <a href="#b2c-form">
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Start B2C Audit <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Objections */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-800 text-white rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Free Download: Drop Playbook</h2>
-            <p className="text-green-100 mb-6">
-              A 30-day launch plan for preorder drops: content hooks, offer positioning, and post-purchase follow-up.
-            </p>
-            <Link to={createPageUrl('Resources')}>
-              <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100">
-                Download Playbook <ArrowRight className="ml-2 w-5 h-5" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Common Objections</h2>
+          <div className="space-y-6 mb-10">
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"I don\'t know how to make content. I\'m a farmer, not a videographer."</p>
+              <p className="text-gray-700">You film on your phone. We tell you exactly what to capture. No editing. No fancy gear. Post raw clips. Authenticity converts better than production quality.</p>
+            </div>
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"What if I get too many orders and can\'t fulfill them?"</p>
+              <p className="text-gray-700">We cap your order form at your actual capacity. When you hit the limit, new customers join the waitlist. No overselling. No chaos.</p>
+            </div>
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"Posting on social media takes too much time."</p>
+              <p className="text-gray-700">Film once a week (15 min). That batch gives you 2-3 posts. Schedule them in advance. Total weekly time: 20 minutes.</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Talk Through Your Constraints <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>

@@ -12,14 +12,14 @@ export default function WholesaleGrowth() {
       <section className="bg-gradient-to-b from-green-50 to-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Stop relying on DMs. Build a wholesale pipeline that qualifies buyers for you.
+            Qualify Wholesale Buyers Before You Pick Up the Phone
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Turn wholesale inquiries into qualified accounts with automated intake, buyer kits, and clear pricing tiers—so you\'re not answering the same questions all day.
+            Intake form asks volume, frequency, delivery zone, pricing tier. Unqualified buyers never reach you. Serious buyers get your wholesale kit automatically.
           </p>
           <a href="#wholesale-form">
             <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
-              Start Wholesale Intake <ArrowRight className="ml-2 w-5 h-5" />
+              See How It Works <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
         </div>
@@ -28,67 +28,94 @@ export default function WholesaleGrowth() {
       {/* The Problem */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">The Problem</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Why Wholesale Inquiries Die</h2>
+          <p className="text-center text-gray-600 mb-10">You spend 20 minutes explaining minimums. They ghost. Every single time.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
             {[
-              "Time-wasting inquiries from buyers who can't meet your minimums",
-              'Unclear pricing, pack sizes, and availability',
-              'No buyer qualification before the first call',
-              'No follow-up automation after inquiries',
-              'No tracking on which channels drive qualified buyers'
+              '"Can you do 5 cases?" No. Minimum is 50. Call ends.',
+              '"What\'s your pricing?" Depends on volume and frequency. They never follow up.',
+              '"Can you deliver to San Francisco?" No. You\'re 300 miles south. Wasted call.',
+              'Buyer sounds excited. You send pricing. Crickets for 3 weeks. Deal dies.'
             ].map((problem, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border border-red-100">
-                <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">{problem}</p>
+              <div key={idx} className="flex items-start gap-3 p-4 bg-red-50 rounded-lg border-l-4 border-red-600">
+                <p className="text-gray-900 font-medium">{problem}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* The Solution */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">The Solution: Wholesale Growth System</h2>
-          <p className="text-center text-gray-600 mb-12">
-            A complete buyer pipeline that works while you grow. Here\'s what you get:
-          </p>
-          
-          <div className="bg-white rounded-xl p-8 border border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Deliverables</h3>
-            <div className="space-y-4">
-              {[
-                { title: 'Wholesale-focused website pages', desc: 'Home, Wholesale, About, Proof, Contact—all optimized for buyer clarity' },
-                { title: 'Wholesale Buyer Intake form', desc: 'Captures volume, frequency, pickup/delivery, pricing tier, and timeline' },
-                { title: 'Wholesale Kit', desc: 'PDF + landing page + email delivery automation' },
-                { title: 'Basic CRM pipeline', desc: 'Stages + notifications so you never miss a follow-up' },
-                { title: 'Tracking plan + verified conversions', desc: 'Know which channels drive qualified buyers' },
-                { title: 'Handoff', desc: 'Logins, documentation, and training so you own everything' }
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 pb-4 border-b border-gray-100 last:border-0">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                    <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="text-center">
+            <a href="#wholesale-form">
+              <Button className="bg-green-800 hover:bg-green-900 text-white">
+                Fix This With Automated Intake <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Wholesale Buyer Checklist CTA */}
+      {/* The System */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">How the Wholesale System Works</h2>
+          <p className="text-center text-gray-600 mb-12">Three steps. All automated. Runs without you.</p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 1: QUALIFICATION</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Buyer Fills Intake Form</h3>
+              <p className="text-gray-700 mb-4">They answer: volume needed, frequency, delivery zone, order timeline, business type.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Unqualified buyers get filtered out before they waste your time.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 2: AUTOMATION</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">System Sends Wholesale Kit</h3>
+              <p className="text-gray-700 mb-4">Line sheet, pricing tiers, pack sizes, delivery terms, order minimums—all sent automatically.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Serious buyers get everything they need. You haven\'t typed a word yet.</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200">
+              <div className="text-green-800 font-bold text-sm mb-3">STEP 3: FOLLOW-UP</div>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">You Get Notified</h3>
+              <p className="text-gray-700 mb-4">Lead goes into your CRM. System reminds you when to follow up. You call when they\'re ready to buy.</p>
+              <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">Talk to buyers, not tire-kickers. Close deals faster.</p>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-10">
+            <h3 className="font-bold text-gray-900 mb-3">What Happens During Peak Season?</h3>
+            <p className="text-gray-700">System keeps running. Buyers submit forms. They get wholesale kits. CRM tracks everything. You focus on harvest. Follow up when you have bandwidth.</p>
+          </div>
+
+          <div className="text-center">
+            <a href="#wholesale-form">
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Start Wholesale Intake <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Objections */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-800 text-white rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">Free Download: Wholesale Buyer Qualification Checklist</h2>
-            <p className="text-green-100 mb-6">
-              A simple checklist to qualify buyers before the first call—volume, frequency, payment terms, and more.
-            </p>
-            <Link to={createPageUrl('Resources')}>
-              <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100">
-                Download Checklist <ArrowRight className="ml-2 w-5 h-5" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Common Objections</h2>
+          <div className="space-y-6 mb-10">
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"I already have 2-3 wholesale accounts. Why do I need this?"</p>
+              <p className="text-gray-700">Those 3 accounts came from months of networking. This system finds the next 3 in weeks—without you leaving the field.</p>
+            </div>
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"My product sells itself. I don\'t need marketing."</p>
+              <p className="text-gray-700">Great product gets you the first order. The system gets you recurring orders from 10+ accounts instead of 3.</p>
+            </div>
+            <div className="bg-gray-50 border-l-4 border-green-800 p-6 rounded-r-lg">
+              <p className="font-bold text-gray-900 mb-2">"What if I can\'t fulfill large orders?"</p>
+              <p className="text-gray-700">We set volume caps in your intake form. Buyers only see minimums you can actually hit. No overselling.</p>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link to={createPageUrl('Contact')}>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white">
+                Talk Through Your Situation <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </div>
