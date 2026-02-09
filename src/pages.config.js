@@ -54,7 +54,6 @@ import Contact from './pages/Contact';
 import FarmGrowthAudit from './pages/FarmGrowthAudit';
 import FlowerFarmGrowth from './pages/FlowerFarmGrowth';
 import FruitFarmGrowth from './pages/FruitFarmGrowth';
-import Home from './pages/Home';
 import LeadsDashboard from './pages/LeadsDashboard';
 import NurseryGrowth from './pages/NurseryGrowth';
 import OrchardGrowth from './pages/OrchardGrowth';
@@ -65,10 +64,11 @@ import RanchGrowth from './pages/RanchGrowth';
 import Resources from './pages/Resources';
 import Solutions from './pages/Solutions';
 import Terms from './pages/Terms';
+import ThankYouAudit from './pages/ThankYouAudit';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
-import ThankYouAudit from './pages/ThankYouAudit';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
@@ -80,7 +80,6 @@ export const PAGES = {
     "FarmGrowthAudit": FarmGrowthAudit,
     "FlowerFarmGrowth": FlowerFarmGrowth,
     "FruitFarmGrowth": FruitFarmGrowth,
-    "Home": Home,
     "LeadsDashboard": LeadsDashboard,
     "NurseryGrowth": NurseryGrowth,
     "OrchardGrowth": OrchardGrowth,
@@ -91,10 +90,11 @@ export const PAGES = {
     "Resources": Resources,
     "Solutions": Solutions,
     "Terms": Terms,
+    "ThankYouAudit": ThankYouAudit,
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
-    "ThankYouAudit": ThankYouAudit,
+    "Home": Home,
 }
 
 export const pagesConfig = {
