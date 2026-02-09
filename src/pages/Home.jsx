@@ -140,7 +140,7 @@ export default function Home() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
-                <span><strong>Local rankings:</strong> "organic farm near me", "wholesale dragon fruit", "Escondido dragon fruit"</span>
+                <span className="">Local rankings: "farm near me", "wholesale dragon fruit", "San Diego, eggs"</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
@@ -207,7 +207,7 @@ export default function Home() {
             <ul className="space-y-3 text-gray-700 mb-6">
               <li className="flex items-start gap-2">
                 <span className="font-bold">•</span>
-                <span className="">Foundation (Website + SEO + Lead Intake): starting at $750</span>
+                <span className="">Foundation (Website + SEO + Lead Intake): starting at $7,500</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold">•</span>
