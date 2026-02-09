@@ -140,7 +140,7 @@ export default function Home() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
-                <span className="">Local rankings: "organic farm near me", "wholesale dragon fruit", "Escondido dragon fruit"</span>
+                <span><strong>Local rankings:</strong> "farm near me", "wholesale [product]", "[city] [product]"</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-[#6B8F71] mt-0.5 flex-shrink-0" />
@@ -207,7 +207,7 @@ export default function Home() {
             <ul className="space-y-3 text-gray-700 mb-6">
               <li className="flex items-start gap-2">
                 <span className="font-bold">•</span>
-                <span className="">Foundation (Website + SEO + Lead Intake): starting at $750</span>
+                <span><strong>Foundation (Website + SEO + Lead Intake):</strong> starting at $_____</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold">•</span>
@@ -230,35 +230,35 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8 text-center">Common Questions</h2>
           <div className="space-y-4">
             {[
-            {
-              q: 'My season starts in 4 weeks. Can you build it in time?',
-              a: 'Yes. Season Sprint: 10-day build. Landing page, intake form, tracking, and automation live before first harvest. Full system optimization continues post-launch.'
-            },
-            {
-              q: "What if leads don't come in right away?",
-              a: "That's normal. We launch with tracking so we can see exactly where the bottleneck is: traffic (visibility) or conversion (site/forms/follow-up). You get a post-launch optimization window included, where we improve pages, CTAs, forms, and follow-up based on real data. If you want faster volume, we can add Google Search or Meta once tracking is live."
-            },
-            {
-              q: 'What if I get more orders than I can handle?',
-              a: 'We cap your forms at your capacity. When you hit the limit, new orders join the waitlist. No overselling.'
-            },
-            {
-              q: 'Do I own this or pay monthly forever?',
-              a: 'You own it. One-time build fee. Optional monthly support for ongoing optimization (Growth/Scale only).'
-            },
-            {
-              q: 'I already have a website. Do I need to rebuild?',
-              a: 'Maybe. We audit it first. If it has intake forms, automation, and tracking, we optimize. If not, rebuild is faster.'
-            }].
-            map((faq, idx) =>
-            <details key={idx} className="bg-white rounded-lg p-6 border border-[#E6E0D5] shadow-sm group">
+              {
+                q: 'My season starts in 4 weeks. Can you build it in time?',
+                a: 'Yes. Season Sprint: 10-day build. Landing page, intake form, tracking, and automation live before first harvest. Full system optimization continues post-launch.'
+              },
+              {
+                q: "What if leads don't come in right away?",
+                a: "That's normal. We launch with tracking so we can see exactly where the bottleneck is: traffic (visibility) or conversion (site/forms/follow-up). You get a post-launch optimization window included, where we improve pages, CTAs, forms, and follow-up based on real data. If you want faster volume, we can add Google Search or Meta once tracking is live."
+              },
+              {
+                q: 'What if I get more orders than I can handle?',
+                a: 'We cap your forms at your capacity. When you hit the limit, new orders join the waitlist. No overselling.'
+              },
+              {
+                q: 'Do I own this or pay monthly forever?',
+                a: 'You own it. One-time build fee. Optional monthly support for ongoing optimization (Growth/Scale only).'
+              },
+              {
+                q: 'I already have a website. Do I need to rebuild?',
+                a: 'Maybe. We audit it first. If it has intake forms, automation, and tracking, we optimize. If not, rebuild is faster.'
+              }
+            ].map((faq, idx) => (
+              <details key={idx} className="bg-white rounded-lg p-6 border border-[#E6E0D5] shadow-sm group">
                 <summary className="font-semibold text-[#1A1A1A] cursor-pointer list-none flex justify-between items-center">
                   <span>{faq.q}</span>
                   <span className="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <p className="text-gray-700 mt-3 pl-4 border-l-4 border-[#6B8F71]">{faq.a}</p>
               </details>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -287,8 +287,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>);
-
+    </div>
+  );
 }
 
 function QuickIntakeForm() {
@@ -333,8 +333,8 @@ function QuickIntakeForm() {
       <div className="text-center py-8">
         <CheckCircle className="w-12 h-12 text-[#AED354] mx-auto mb-3" />
         <p className="text-white font-semibold">Thanks! We'll send you a quote within 24 hours.</p>
-      </div>);
-
+      </div>
+    );
   }
 
   return (
@@ -344,38 +344,38 @@ function QuickIntakeForm() {
         placeholder="Your Name *"
         required
         value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100" />
-
+        onChange={(e) => setFormData({...formData, name: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
       <input
         type="text"
         placeholder="Farm/Business Name *"
         required
         value={formData.farm}
-        onChange={(e) => setFormData({ ...formData, farm: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100" />
-
+        onChange={(e) => setFormData({...formData, farm: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
       <input
         type="email"
         placeholder="Email *"
         required
         value={formData.email}
-        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100" />
-
+        onChange={(e) => setFormData({...formData, email: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
       <input
         type="tel"
         placeholder="Phone"
         value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100" />
-
+        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
       <select
         required
         value={formData.goal}
-        onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white">
-
+        onChange={(e) => setFormData({...formData, goal: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+      >
         <option value="">Goal *</option>
         <option value="B2B Growth">B2B Growth</option>
         <option value="B2C Conversion">B2C Conversion</option>
@@ -385,19 +385,19 @@ function QuickIntakeForm() {
         type="text"
         placeholder="Weekly Capacity (optional)"
         value={formData.capacity}
-        onChange={(e) => setFormData({ ...formData, capacity: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100" />
-
+        onChange={(e) => setFormData({...formData, capacity: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white placeholder-green-100"
+      />
       <input
         type="date"
         placeholder="Season Start Date"
         value={formData.season_start}
-        onChange={(e) => setFormData({ ...formData, season_start: e.target.value })}
-        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white" />
-
+        onChange={(e) => setFormData({...formData, season_start: e.target.value})}
+        className="w-full px-4 py-2 rounded bg-white/20 border border-white/30 text-white"
+      />
       <Button type="submit" disabled={loading} className="w-full bg-white text-[#1F3D2B] hover:bg-gray-100 font-semibold transition-all">
         {loading ? 'Sending...' : 'Get Quote'}
       </Button>
-    </form>);
-
+    </form>
+  );
 }
