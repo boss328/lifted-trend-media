@@ -65,10 +65,10 @@ import RanchGrowth from './pages/RanchGrowth';
 import Resources from './pages/Resources';
 import Solutions from './pages/Solutions';
 import Terms from './pages/Terms';
+import ThankYouAudit from './pages/ThankYouAudit';
 import ThankYouB2C from './pages/ThankYouB2C';
 import ThankYouWholesale from './pages/ThankYouWholesale';
 import WholesaleGrowth from './pages/WholesaleGrowth';
-import ThankYouAudit from './pages/ThankYouAudit';
 import __Layout from './Layout.jsx';
 
 
@@ -91,10 +91,10 @@ export const PAGES = {
     "Resources": Resources,
     "Solutions": Solutions,
     "Terms": Terms,
+    "ThankYouAudit": ThankYouAudit,
     "ThankYouB2C": ThankYouB2C,
     "ThankYouWholesale": ThankYouWholesale,
     "WholesaleGrowth": WholesaleGrowth,
-    "ThankYouAudit": ThankYouAudit,
 }
 
 export const pagesConfig = {
