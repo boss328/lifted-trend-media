@@ -1,0 +1,58 @@
+{
+  "name": "CaseStudy",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "description": "Client name (can be anonymized)"
+    },
+    "client_type": {
+      "type": "string",
+      "description": "Farm type (e.g., organic orchard, nursery)"
+    },
+    "goal": {
+      "type": "string",
+      "description": "Primary goal"
+    },
+    "constraints": {
+      "type": "string",
+      "description": "Key constraints or challenges"
+    },
+    "solution": {
+      "type": "string",
+      "description": "What we built"
+    },
+    "timeline": {
+      "type": "string",
+      "description": "Project timeline"
+    },
+    "results": {
+      "type": "string",
+      "description": "Results and outcomes"
+    },
+    "metrics": {
+      "type": "string",
+      "description": "Key metrics (can be placeholder)"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Screenshot or hero image"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Published status"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured on homepage"
+    }
+  },
+  "required": [
+    "client_name",
+    "client_type",
+    "goal",
+    "solution"
+  ]
+}

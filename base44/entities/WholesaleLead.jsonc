@@ -1,0 +1,233 @@
+{
+  "name": "WholesaleLead",
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string",
+      "description": "Business name"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "contact_role": {
+      "type": "string",
+      "description": "Contact role/title"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "website": {
+      "type": "string",
+      "description": "Website URL"
+    },
+    "socials": {
+      "type": "string",
+      "description": "Social media links"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location"
+    },
+    "delivery_radius": {
+      "type": "string",
+      "description": "Delivery radius"
+    },
+    "product_category": {
+      "type": "string",
+      "enum": [
+        "Fruit",
+        "Vegetables",
+        "Nursery",
+        "Livestock",
+        "Dairy",
+        "Other"
+      ],
+      "description": "Product category"
+    },
+    "products_varieties": {
+      "type": "string",
+      "description": "Products and varieties offered"
+    },
+    "seasonality": {
+      "type": "string",
+      "description": "Seasonality and availability info"
+    },
+    "has_wholesale_buyers": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        "No"
+      ],
+      "description": "Currently has wholesale buyers"
+    },
+    "current_buyers_details": {
+      "type": "string",
+      "description": "Details about current buyers"
+    },
+    "target_buyers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Restaurants",
+          "Grocers",
+          "Distributors",
+          "Co-ops",
+          "Other"
+        ]
+      },
+      "description": "Target buyer types"
+    },
+    "weekly_volume_capacity": {
+      "type": "string",
+      "enum": [
+        "Under 100 units",
+        "100\u2013500 units",
+        "500\u20132,000 units",
+        "2,000\u201310,000 units",
+        "10,000+"
+      ],
+      "description": "Average weekly volume capacity"
+    },
+    "packaging_options": {
+      "type": "string",
+      "description": "Packaging options and case sizes"
+    },
+    "certifications": {
+      "type": "string",
+      "description": "Certifications (organic, GAP, etc.)"
+    },
+    "pricing_structure": {
+      "type": "string",
+      "description": "Current pricing structure (optional)"
+    },
+    "biggest_bottleneck": {
+      "type": "string",
+      "enum": [
+        "No website or online presence",
+        "Unqualified inquiries waste time",
+        "Pricing confusion",
+        "No follow-up system",
+        "Can't track what's working",
+        "Other"
+      ],
+      "description": "Biggest bottleneck"
+    },
+    "bottleneck_details": {
+      "type": "string",
+      "description": "More detail on bottleneck"
+    },
+    "success_90_days": {
+      "type": "string",
+      "description": "What does success look like in 90 days"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Qualified",
+        "Call Booked",
+        "Proposal Sent",
+        "Negotiation",
+        "Won",
+        "Lost"
+      ],
+      "default": "New",
+      "description": "Pipeline stage"
+    },
+    "score": {
+      "type": "string",
+      "enum": [
+        "Hot",
+        "Warm",
+        "Cold"
+      ],
+      "default": "Warm",
+      "description": "Lead temperature"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Website Form",
+        "Referral",
+        "Social Media",
+        "Email",
+        "Event",
+        "Free Audit",
+        "Other"
+      ],
+      "description": "Lead source"
+    },
+    "is_decision_maker": {
+      "type": "boolean",
+      "description": "Is this person the decision maker?"
+    },
+    "budget_range": {
+      "type": "string",
+      "enum": [
+        "Under $5K",
+        "$5K-$10K",
+        "$10K-$20K",
+        "$20K+",
+        "Not sure"
+      ],
+      "description": "Budget range for project"
+    },
+    "season_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When does your season start?"
+    },
+    "season_end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When does your season end?"
+    },
+    "response_speed": {
+      "type": "string",
+      "enum": [
+        "Within 24 hours",
+        "1-3 days",
+        "1 week",
+        "Longer"
+      ],
+      "description": "How quickly did they respond to intake?"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Wholesale",
+          "B2C",
+          "Both",
+          "Audit Request",
+          "High Priority",
+          "Seasonal"
+        ]
+      },
+      "description": "Lead tags"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal notes"
+    },
+    "next_followup": {
+      "type": "string",
+      "format": "date",
+      "description": "Next follow-up date"
+    }
+  },
+  "required": [
+    "business_name",
+    "contact_name",
+    "email"
+  ]
+}

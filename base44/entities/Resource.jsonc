@@ -1,0 +1,38 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "farm_name": {
+      "type": "string",
+      "description": "Farm or brand name"
+    },
+    "role": {
+      "type": "string",
+      "description": "Role or title"
+    },
+    "resource_type": {
+      "type": "string",
+      "enum": [
+        "Wholesale Checklist",
+        "Content Shot List",
+        "Seasonal Launch Checklist"
+      ],
+      "description": "Resource downloaded"
+    },
+    "downloaded_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Download timestamp"
+    }
+  },
+  "required": [
+    "email",
+    "farm_name",
+    "resource_type"
+  ]
+}

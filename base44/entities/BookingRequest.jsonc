@@ -1,0 +1,53 @@
+{
+  "name": "BookingRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "business": {
+      "type": "string",
+      "description": "Business name"
+    },
+    "goal": {
+      "type": "string",
+      "enum": [
+        "Wholesale Growth",
+        "B2C Conversion",
+        "Both"
+      ],
+      "description": "Primary goal"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Contacted",
+        "Booked",
+        "Completed",
+        "No Show"
+      ],
+      "default": "New",
+      "description": "Booking status"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "goal"
+  ]
+}

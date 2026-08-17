@@ -1,0 +1,171 @@
+{
+  "name": "B2CLead",
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string",
+      "description": "Business name"
+    },
+    "contact_name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "offer_product": {
+      "type": "string",
+      "description": "Main offer or product"
+    },
+    "monthly_revenue_range": {
+      "type": "string",
+      "enum": [
+        "Under $5K",
+        "$5K\u2013$15K",
+        "$15K\u2013$50K",
+        "$50K\u2013$100K",
+        "$100K+",
+        "Prefer not to say"
+      ],
+      "description": "Average monthly revenue range"
+    },
+    "traffic_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "TikTok",
+          "Instagram",
+          "Facebook",
+          "Google",
+          "Email",
+          "Word of mouth",
+          "Other"
+        ]
+      },
+      "description": "Current traffic sources"
+    },
+    "post_inquiry_process": {
+      "type": "string",
+      "description": "What happens after someone inquires"
+    },
+    "biggest_conversion_leak": {
+      "type": "string",
+      "enum": [
+        "No landing page",
+        "No follow-up system",
+        "Weak offer positioning",
+        "No tracking",
+        "Content doesn't convert",
+        "Other"
+      ],
+      "description": "Biggest conversion leak"
+    },
+    "desired_outcome_30": {
+      "type": "string",
+      "description": "Desired outcome in 30 days"
+    },
+    "desired_outcome_60": {
+      "type": "string",
+      "description": "Desired outcome in 60 days"
+    },
+    "desired_outcome_90": {
+      "type": "string",
+      "description": "Desired outcome in 90 days"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Qualified",
+        "Call Booked",
+        "Proposal Sent",
+        "Negotiation",
+        "Won",
+        "Lost"
+      ],
+      "default": "New",
+      "description": "Pipeline stage"
+    },
+    "score": {
+      "type": "string",
+      "enum": [
+        "Hot",
+        "Warm",
+        "Cold"
+      ],
+      "default": "Warm",
+      "description": "Lead temperature"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Website Form",
+        "Referral",
+        "Social Media",
+        "Email",
+        "Event",
+        "Free Audit",
+        "Other"
+      ],
+      "description": "Lead source"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Wholesale",
+          "B2C",
+          "Both",
+          "Audit Request"
+        ]
+      },
+      "description": "Lead tags"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Internal notes"
+    },
+    "next_followup": {
+      "type": "string",
+      "format": "date",
+      "description": "Next follow-up date"
+    },
+    "is_decision_maker": {
+      "type": "boolean",
+      "description": "Is this person the decision maker?"
+    },
+    "budget_range": {
+      "type": "string",
+      "enum": [
+        "Under $5K",
+        "$5K-$10K",
+        "$10K-$20K",
+        "$20K+",
+        "Not sure"
+      ],
+      "description": "Budget range for project"
+    },
+    "response_speed": {
+      "type": "string",
+      "enum": [
+        "Within 24 hours",
+        "1-3 days",
+        "1 week",
+        "Longer"
+      ],
+      "description": "How quickly did they respond to intake?"
+    }
+  },
+  "required": [
+    "business_name",
+    "email"
+  ]
+}

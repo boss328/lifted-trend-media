@@ -1,0 +1,67 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "farm_business_name": {
+      "type": "string",
+      "description": "Farm or business name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number (any format)"
+    },
+    "website": {
+      "type": "string",
+      "description": "Website URL (optional)"
+    },
+    "goal": {
+      "type": "string",
+      "description": "Primary goal"
+    },
+    "weekly_capacity": {
+      "type": "string",
+      "description": "Weekly capacity (optional)"
+    },
+    "current_situation": {
+      "type": "string",
+      "description": "Current situation description"
+    },
+    "biggest_bottleneck": {
+      "type": "string",
+      "description": "Biggest bottleneck or challenge"
+    },
+    "lead_source": {
+      "type": "string",
+      "default": "Farm Growth Audit",
+      "description": "Where the lead came from"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Contacted",
+        "Qualified",
+        "Unqualified",
+        "Converted"
+      ],
+      "default": "New",
+      "description": "Lead status"
+    }
+  },
+  "required": [
+    "name",
+    "farm_business_name",
+    "email",
+    "current_situation",
+    "biggest_bottleneck"
+  ]
+}

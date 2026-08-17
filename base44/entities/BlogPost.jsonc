@@ -1,0 +1,52 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Post title"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short excerpt"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full post content (markdown)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Wholesale",
+        "B2C",
+        "Content",
+        "Operations",
+        "Case Study"
+      ],
+      "description": "Post category"
+    },
+    "featured_image": {
+      "type": "string",
+      "description": "Featured image URL"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "Published status"
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publish date"
+    }
+  },
+  "required": [
+    "title",
+    "slug",
+    "content"
+  ]
+}
